@@ -11,7 +11,7 @@
 [How to lock my hot wallet on a collection?](#setcollectionLock)\
 [How to lock my hot wallet on a specific usecase on a collection?](#setcollectionUsecaseLock)
 
-### registerDelegationAddress
+### HHssss #registerDelegationAddress
 
 <b>Purpose:</b> The registerDelegationAddress() function registers a new delegation Address.
 
