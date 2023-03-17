@@ -2,16 +2,17 @@
 ## Setter functions
 [How to register a Delegation Address?](#registerDelegationAddress)  
 [How to register a Delegation Address using an address with sub-delegation rights?](#registerDelegationAddressUsingSubDelegation)\
-[How to revoke a Delegation Address](#revokeDelegationAddress)\
+[How to revoke a Delegation Address?](#revokeDelegationAddress)\
 [How to revoke a Delegation Address using an address with sub-delegation rights?](#revokeDelegationAddressUsingSubdelegation)\
 [How to register multiple Delegation Addresses?](#batchDelegations)\
 [How to revoke multiple Delegation Addresses?](#batchRevocations)\
 [How to update a Delegation Address?](#updateDelegationAddress)\
-[How to lock my hot wallet globally?](#setglobalLock)\
+[How to globally lock my hot wallet?](#setglobalLock)\
 [How to lock my hot wallet on a collection?](#setcollectionLock)\
 [How to lock my hot wallet on a specific usecase on a collection?](#setcollectionUsecaseLock)
 
 <div id='registerDelegationAddress'/>
+
 ### How to register a Delegation Address?
 
 <b>Purpose:</b> The registerDelegationAddress() function registers a new delegation Address.
@@ -42,8 +43,10 @@
       bool _allTokens,
       uint256 _tokenid
     ) public;
- 
-### registerDelegationAddressUsingSubDelegation() 
+    
+<div id='registerDelegationAddressUsingSubDelegation'/>
+
+### How to register a Delegation Address using an address with sub-delegation rights?
 
 <b>Purpose:</b> The registerDelegationAddressUsingSubDelegation() function registers a new delegation Address by taking into consideration the sub-delegation rights given by a delegator to a specific delegation Address.
 
@@ -69,8 +72,10 @@
         bool _allTokens,
         uint256 _tokenid
     ) public;
- 
-### revokeDelegationAddress() 
+
+<div id='revokeDelegationAddress'/>
+
+### How to revoke a Delegation Address?
 
 <b>Purpose:</b> The revokeDelegationAddress() function revokes the delegation rights given to a delegation address on a specific use case for a specific NFT collection.
 
@@ -89,8 +94,10 @@
           address _delegationAddress,
           uint8 _useCase
       ) public;
- 
-### revokeDelegationAddressUsingSubdelegation() 
+
+<div id='revokeDelegationAddressUsingSubdelegation'/>
+
+### How to revoke a Delegation Address using an address with sub-delegation rights?
 
 <b>Purpose:</b> The revokeDelegationAddressUsingSubdelegation() function revokes the delegation rights given to a delegation address on a specific use case for a specific NFT collection by taking into consideration the sub-delegation rights given by a delegator to a specific delegation Address.
 
@@ -110,8 +117,10 @@
           address _delegationAddress,
           uint8 _useCase
       ) public;
-      
-### batchDelegations() 
+
+<div id='batchDelegations'/>
+
+### How to register multiple Delegation Addresses?
 
 <b>Purpose:</b> The batchDelegations() function registers delegation rights to 1..5 delegation addresses on various use cases of different NFT collections.
 
@@ -135,8 +144,10 @@
           bool[] _allTokens,
           uint256[] _tokenids
       ) public;
- 
-### batchRevocations() 
+
+<div id='batchRevocations'/>
+
+### How to revoke multiple Delegation Addresses?
 
 <b>Purpose:</b> The batchRevocations() function revokes the delegation rights given to 1..5 delegation addresses on various use cases of different NFT collections.
 
@@ -155,7 +166,9 @@
           uint8[] _ useCases
       ) public;
 
-### updateDelegationAddress() 
+<div id='updateDelegationAddress'/>
+
+### How to update a Delegation Address?
 
 <b>Purpose:</b> The updateDelegationAddress() function updates a delegation Address.
 
@@ -181,8 +194,10 @@
           bool _allTokens,
           uint256 _tokenid
       ) public;
- 
-### setglobalLock() 
+
+<div id='setglobalLock'/>
+
+### How to globally lock my hot wallet?
 
 <b>Purpose:</b> The setglobalLock() function locks the wallet address that executes the transaction to prevent any delegation registration of it on any use case on any collection.
 
@@ -197,8 +212,9 @@
           bool _status
       ) public;
 
- 
-### setcollectionLock() 
+<div id='setcollectionLock'/>
+
+### How to lock my hot wallet on a collection?
 
 <b>Purpose:</b> The setcollectionLock() function locks the wallet address that executes the transaction to prevent any registration of it on a specific collection.
 
@@ -214,8 +230,10 @@
           address _collectionAddress,
           bool _status
       ) public;
- 
-### setcollectionUsecaseLock() 
+
+<div id='setcollectionUsecaseLock'/>
+
+### How to lock my hot wallet on a specific usecase on a collection?
 
 <b>Purpose:</b> The setcollectionUsecaseLock () function locks the wallet address that executes the transaction to prevent any registration of it on a specific usecase on a specific collection.
 
