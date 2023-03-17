@@ -1,6 +1,6 @@
 # NFTDelegation Smart Contract Documenation
 ## Setter functions
-[registerDelegationAddress](#registerDelegationAddress)  
+[How to register](#registerDelegationAddress)  
 [registerDelegationAddressUsingSubDelegation](#registerDelegationAddressUsingSubDelegation)\
 [revokeDelegationAddress](#revokeDelegationAddress)\
 [revokeDelegationAddressUsingSubdelegation](#revokeDelegationAddressUsingSubdelegation)\
