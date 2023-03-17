@@ -1,15 +1,15 @@
 # NFTDelegation Smart Contract Documenation
 ## Setter functions
-[How to register](#registerDelegationAddress)  
-[registerDelegationAddressUsingSubDelegation](#registerDelegationAddressUsingSubDelegation)\
-[revokeDelegationAddress](#revokeDelegationAddress)\
-[revokeDelegationAddressUsingSubdelegation](#revokeDelegationAddressUsingSubdelegation)\
-[batchDelegations](#batchDelegations)\
-[batchRevocations](#batchRevocations)\
-[updateDelegationAddress](#updateDelegationAddress)\
-[setglobalLock](#setglobalLock)\
-[setcollectionLock](#setcollectionLock)\
-[setcollectionUsecaseLock](#setcollectionUsecaseLock)
+[How to register a Delegation Address?](#registerDelegationAddress)  
+[How to register a Delegation Address using an address with sub-delegation rights?](#registerDelegationAddressUsingSubDelegation)\
+[How to revoke a Delegation Address](#revokeDelegationAddress)\
+[How to revoke a Delegation Address using an address with sub-delegation rights?](#revokeDelegationAddressUsingSubdelegation)\
+[How to register multiple Delegation Addresses?](#batchDelegations)\
+[How to revoke multiple Delegation Addresses?](#batchRevocations)\
+[How to update a Delegation Address?](#updateDelegationAddress)\
+[How to lock my hot wallet globally?](#setglobalLock)\
+[How to lock my hot wallet on a collection?](#setcollectionLock)\
+[How to lock my hot wallet on a specific usecase on a collection?](#setcollectionUsecaseLock)
 
 ### registerDelegationAddress()
 
