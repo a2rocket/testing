@@ -15,11 +15,11 @@
 
 <b>Purpose:</b> The registerDelegationAddress() function registers a new delegation Address.
 
-<b>Description:</b> The function takes six parameters: _collectionAddress, _delegationAddress, _expiryDate, _useCase, _allTokens and _tokenid. The _collectionAddress parameter is the address of the collection that the delegation will be registered. The _delegationAddress parameter is the address to register. The _expiryDate parameter sets the expiry date of the delegation, after that date the delegation is not active. The _useCase parameter is the type of delegation to register. The _allTokens parameter can take two statuses (true/false), if true it registers the delegation for all collection tokens owned by the delegator, if false then it refers to a specific token that is set with the _tokenid parameter. The _tokenid parameter is the ID of the token to register the delegation for.
+<b>Description:</b> The function takes six parameters: _collectionAddress, _delegationAddress, _expiryDate, _useCase, _allTokens and _tokenid. The _collectionAddress parameter is the address of the collection that the delegation address will be registered. The _delegationAddress parameter is the address to register. The _expiryDate parameter sets the expiry date of the delegation, after that date the delegation is not active. The _useCase parameter is the type of delegation to register. The _allTokens parameter can take two statuses (true/false), if true it registers the delegation for all collection tokens owned by the delegator, if false then it refers to a specific token that is set on the _tokenid parameter. The _tokenid parameter is the ID of the token to register the delegation for.
 
 <b>Notes:</b> 
-  * To register a delegation Address for all collections the value of _collectionAddress should be set to 0x8888888888888888888888888888888888888888.
-  * To delegate to all tokens owned set the _allTokens parameter to true, otherwise, by setting it to false the delegation will refer only to the token id set in the _tokenid parameter
+  * To register a delegation Address for all collections the value of parameter _collectionAddress should be set to 0x8888888888888888888888888888888888888888.
+  * To delegate for all tokens owned set the _allTokens parameter to true, otherwise, by setting _allTokens to false the delegation refers only to the token id set in the _tokenid parameter
 
 <!-- end of the list -->
 
@@ -29,7 +29,7 @@
       * @param _delegationAddress The delegation address.
       * @param _expiryDate The expiry date of the delegation.
       * @param _useCase The type of delegation.
-      * @param _allTokens Refers to which tokens owned by the delegator or a specific token.
+      * @param _allTokens Refers to all tokens owned by a delegator or a specific token.
       * @param _tokenid The ID of the token to register the delegation for. 
     */
  
