@@ -11,7 +11,8 @@
 [How to lock my hot wallet on a collection?](#setcollectionLock)\
 [How to lock my hot wallet on a specific usecase on a collection?](#setcollectionUsecaseLock)
 
-### register Delegation Address
+<div id='registerDelegationAddress'/>
+### How to register a Delegation Address?
 
 <b>Purpose:</b> The registerDelegationAddress() function registers a new delegation Address.
 
