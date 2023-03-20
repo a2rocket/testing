@@ -1,4 +1,4 @@
-# NFTDelegation Smart Contract Documenation
+# NFT Delegation Smart Contract
 ## Main Retrieve functions
 
 [How to retrieve all delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveDelegationAddresses)\
@@ -56,7 +56,7 @@
 
 ### How to retrieve all delegators who gave delegation rights to a delegation Address on a specific use case on a collection?
 
-<b>Purpose:</b> The retrieveDelegators() function retrieves all delegators addresses (active & inactive) who gave delegation rights to a delegation Address on a specific use case on a specific NFT collection
+<b>Purpose:</b> The retrieveDelegators() function retrieves all delegators addresses (active & inactive) who gave delegation rights to a delegation Address on a specific use case on a specific collection
 
 <b>Description:</b> The function takes three parameters: _delegationAddress, _collectionAddress and _useCase. The _delegationAddress parameter is the address for which a delegator gave delegation rights. The _collectionAddress parameter is the address of the collection for which the delegators' addresses will be retrieved. The _useCase parameter is the type of delegation for which all delegators' addresses will be returned. This function returns an address array that includes all delegators' addresses who gave delegation rights to a delegation address on a specific usecase on a specific collection.
 
@@ -177,7 +177,7 @@
 
 ### How to retrieve the most recent delegator who gave delegation rights to a delegation Address on a specific use case on a collection?
 
-<b>Purpose:</b> The retrieveMostRecentDelegator() function retrieves most recent delegator who gave delegation rights to a delegation Address on a specific use case on a specific NFT collection
+<b>Purpose:</b> The retrieveMostRecentDelegator() function retrieves most recent delegator who gave delegation rights to a delegation Address on a specific use case on a specific collection
 
 <b>Description:</b> The function takes three parameters: _delegationAddress, _collectionAddress and _useCase. The _delegationAddress parameter is the address for which a delegator gave delegation rights. The _collectionAddress parameter is the address of the collection for which the delegators' addresses will be retrieved. The _useCase parameter is the type of delegation for which all delegators' addresses will be returned. This function returns the most recent delegator address who gave delegation rights to a delegation address on a specific usecase on a specific collection.
 
@@ -227,7 +227,7 @@
 
 ### How to retrieve the active delegators who gave delegation rights to a delegation Address on a specific use case on a collection?
 
-<b>Purpose:</b> The retrieveActiveDelegators() function retrieves the active delegators addresses who gave delegation rights to a delegation Address on a specific use case on a specific NFT collection
+<b>Purpose:</b> The retrieveActiveDelegators() function retrieves the active delegators addresses who gave delegation rights to a delegation Address on a specific use case on a specific collection
 
 <b>Description:</b> The function takes four parameters: _delegationAddress, _collectionAddress, _date and _useCase. The _delegationAddress parameter is the address for which a delegator gave delegation rights. The _collectionAddress parameter is the address of the collection for which the delegators' addresses will be retrieved. The _date parameter is the epoch time value for which the active delegators' addresses will be retrieved, _date compares its value against the _expiryDate that was given when a delegation was registered. The _useCase parameter is the type of delegation for which all delegators' addresses will be returned. This function returns an address array that includes the active delegators' addresses who gave delegation rights to a delegation address on a specific usecase on a specific collection.
 
