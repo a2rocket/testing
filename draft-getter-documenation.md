@@ -1,5 +1,6 @@
 # NFTDelegation Smart Contract Documenation
-## Getter/Retrieve functions
+## Main Retrieve functions
+
 [How to retrieve all delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveDelegationAddresses)\
 [How to retrieve all delegators who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveDelegators)\
 [How to check if a delegation exists given a delegator address?](#retrieveDelegatorStatusOfDelegation)\
@@ -8,9 +9,15 @@
 [How to retrieve the most recent delegator who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveMostRecentDelegator)\
 [How to retrieve the active delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveActiveDelegations)\
 [How to retrieve the active delegators who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveActiveDelegators)\
+
+
+## Other Retrieve Functions
+
 [How to retrieve the global lock status that exists on a delegation address?](#retrieveGloballockStatus)\
 [How to retrieve the collection lock status that exists on a delegation address?](#retrieveCollectionLockStatus)\
 [How to retrieve the collection use case lock status that exists on a delegation address?](#retrieveCollectionUseCaseLockStatus)\
+
+## Main Retrieve functions
 
 <div id='retrieveDelegationAddresses'/>
 
@@ -183,6 +190,8 @@
     }
 
 <div id='retrieveActiveDelegators'/>
+
+## Other Retrieve Functions
 
 ### How to retrieve the active delegators who gave delegation rights to a delegation Address on a specific use case on a collection?
 
