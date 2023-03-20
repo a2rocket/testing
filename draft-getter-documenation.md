@@ -5,6 +5,7 @@
 [How to retrieve all delegators who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveDelegators)\
 [How to check if a delegation exists given a delegator address?](#retrieveDelegatorStatusOfDelegation)\
 [How to check if a delegation exists given a delegation address?](#retrieveDelegationAddressStatusOfDelegation)\
+[How to check if a delegation exists given a delegator address and a delegation address?](#retrieveGlobalStatusOfDelegation)\
 [How to retrieve the most recent delegation address delegated from a Delegator on a specific use case on a collection?](#retrieveMostRecentDelegation)\
 [How to retrieve the most recent delegator who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveMostRecentDelegator)\
 [How to retrieve the active delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveActiveDelegations)\
@@ -101,7 +102,7 @@
 
 <b>Purpose:</b> The retrieveDelegationAddressStatusOfDelegation() function retrieves the status of a delegation given a delegation address.
 
-<b>Description:</b> The function takes three parameters: _delegationAddress, _collectionAddress and _useCase. The _delegationAddress parameter is the address for which this function checks if a delegation was registered. The _collectionAddress parameter is the address of the collection for which the status will be returned. The _useCase parameter is the type of delegation for which the delegation status will be returned. This function returns a boolean value indicating whether a delegation on a specific use case on a specific collection exists or not, if true it means that a delegator registered the given delegation address on a specific use case on a specific collection.
+<b>Description:</b> The function takes three parameters: _delegationAddress, _collectionAddress and _useCase. The _delegationAddress parameter is the address for which  a delegation was registered. The _collectionAddress parameter is the address of the collection for which the status will be returned. The _useCase parameter is the type of delegation for which the delegation status will be returned. This function returns a boolean value indicating whether a delegation on a specific use case on a specific collection exists or not, if true it means that a delegator registered the given delegation address on a specific use case on a specific collection.
 
     /**
       * @dev Retrieve the delegation status given a delegation address.
@@ -112,6 +113,31 @@
     */
  
     function retrieveDelegationAddressStatusOfDelegation(
+      address _delegationAddress,
+      address _collectionAddress,
+      uint8 _useCase
+    ) public view returns (bool) {
+      return true/false;
+    }
+
+<div id='retrieveGlobalStatusOfDelegation'/>
+
+### How to check if a delegation exists given a delegator address and a delegation address??
+
+<b>Purpose:</b> The retrieveGlobalStatusOfDelegation() function retrieves the status of a delegation given both the address of the delegator and the delegation address.
+
+<b>Description:</b> The function takes four parameters: _delegatorAddress, _delegationAddress, _collectionAddress and _useCase.  The _delegatorAddress parameter is the address of the delegator. The _delegationAddress parameter is the address for which a delegation was registered. The _collectionAddress parameter is the address of the collection for which the status will be returned. The _useCase parameter is the type of delegation for which the delegation status will be returned. This function returns a boolean value indicating whether a delegation on a specific use case on a specific collection exists or not, if true it means that a delegator registered the given delegation address on a specific use case on a specific collection.
+
+    /**
+      * @dev Retrieve the delegation status given a delegator address and a delegation address.
+      * @param _delegatorAddress The delegator address.
+      * @param _delegationAddress The delegation address.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _useCase The type of delegation.
+      * @return true if delegation exists, false otherwise.
+    */
+ 
+    function retrieveGlobalStatusOfDelegation(
       address _delegationAddress,
       address _collectionAddress,
       uint8 _useCase
