@@ -2,6 +2,8 @@
 ## Getter/Retrieve functions
 [How to retrieve all delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveDelegationAddresses)\
 [How to retrieve all delegators who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveDelegators)\
+[How to check if a delegation exists given a delegator address?](#retrieveDelegatorStatusOfDelegation)\
+[How to check if a delegation exists given a delegation address?](#retrieveDelegationAddressStatusOfDelegation)\
 [How to retrieve the global lock status that exists on a delegation address?](#retrieveGloballockStatus)\
 [How to retrieve the collection lock status that exists on a delegation address?](#retrieveCollectionLockStatus)\
 [How to retrieve the collection use case lock status that exists on a delegation address?](#retrieveCollectionUseCaseLockStatus)\
@@ -52,6 +54,54 @@
       uint8 _useCase
     ) public view returns (address[]) {
       return delegatorsAddresses;
+    }
+
+<div id='retrieveDelegatorStatusOfDelegation'/>
+
+### How to check if a delegation exists given a delegator address?
+
+<b>Purpose:</b> The retrieveDelegatorStatusOfDelegation() function retrieves the status of a delegation given a delegator address.
+
+<b>Description:</b> The function takes three parameters: _delegatorAddress, _collectionAddress and _useCase. The _delegatorAddress parameter is the address of the delegator. The _collectionAddress parameter is the address of the collection for which the status will be returned. The _useCase parameter is the type of delegation for which the delegation status will be returned. This function returns a boolean value indicating whether a delegation on a specific use case on a specific collection exists or not, if true it means that the delegator registered a delegation address on a specific use case on a specific collection.
+
+    /**
+      * @dev Retrieve the delegation status given a delegator address.
+      * @param _delegatorAddress The delegator address.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _useCase The type of delegation.
+      * @return true if delegation exists, false otherwise.
+    */
+ 
+    function retrieveDelegatorStatusOfDelegation(
+      address _delegatorAddress,
+      address _collectionAddress,
+      uint8 _useCase
+    ) public view returns (bool) {
+      return true/false;
+    }
+
+<div id='retrieveDelegationAddressStatusOfDelegation'/>
+
+### How to check if a delegation exists given a delegation address?
+
+<b>Purpose:</b> The retrieveDelegationAddressStatusOfDelegation() function retrieves the status of a delegation given a delegation address.
+
+<b>Description:</b> The function takes three parameters: _delegationAddress, _collectionAddress and _useCase. The _delegationAddress parameter is the address for which this function checks if a delegation was registered. The _collectionAddress parameter is the address of the collection for which the status will be returned. The _useCase parameter is the type of delegation for which the delegation status will be returned. This function returns a boolean value indicating whether a delegation on a specific use case on a specific collection exists or not, if true it means that a delegator registered the given delegation address on a specific use case on a specific collection.
+
+    /**
+      * @dev Retrieve the delegation status given a delegation address.
+      * @param _delegationAddress The delegation address.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _useCase The type of delegation.
+      * @return true if delegation exists, false otherwise.
+    */
+ 
+    function retrieveDelegationAddressStatusOfDelegation(
+      address _delegationAddress,
+      address _collectionAddress,
+      uint8 _useCase
+    ) public view returns (bool) {
+      return true/false;
     }
 
 <div id='retrieveGloballockStatus'/>
