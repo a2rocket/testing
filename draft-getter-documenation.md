@@ -9,8 +9,8 @@
 [How to retrieve the most recent delegator who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveMostRecentDelegator)\
 [How to retrieve the active delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveActiveDelegations)\
 [How to retrieve the active delegators who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveActiveDelegators)\
-[How to check if a delegator gave sub-delegation status on delegation address a specific use case on a collection?](#retrieveSubDelegationStatus)\
-[How to check if a consolidation exists on a specific use case on a collection?](#checkConsolidationStatus)\
+[How to check if a delegator gave sub-delegation rights to a delegation address for a collection?](#retrieveSubDelegationStatus)\
+[How to check the consolidation status between two addresses on a collection?](#checkConsolidationStatus)\
 [How to check if a specific token id was registered during delegation on a specific use case on a collection?](#checkConsolidationStatus)
 
 ## Other Retrieve Functions
@@ -217,6 +217,54 @@
       uint8 _useCase
     ) public view returns (address[]) {
       return delegatorsAddresses;
+    }
+
+<div id='retrieveSubDelegationStatus'/>
+
+### How to check if a delegator gave sub-delegation rights to a delegation address on a collection?
+
+<b>Purpose:</b> The retrieveSubDelegationStatus() function retrieves the sub-delegation rights status between a delegator and a delegation address.
+
+<b>Description:</b> The function takes three parameters: _delegatorAddress, _collectionAddress and _delegationAddress. The _delegatorAddress parameter is the address of the delegator. The _collectionAddress parameter is the address of the collection for which sub-delegation rights were given from a delegator to a delegation address. The _delegationAddress parameter is the address for which the delegator gave sub-delegation rights. This function returns a boolean value indicating whether sub-delegation rights were given from the delegator to the delegation address.
+
+    /**
+      * @dev Retrieve sub-delegation rights status between a delegator and a delegation address.
+      * @param _delegatorAddress The delegator address.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _delegationAddress The delegation address.
+      * @return true if the delegator gave sub-delegation rights to the delegation address.
+    */
+ 
+    function retrieveSubDelegationStatus(
+      address _delegatorAddress,
+      address _collectionAddress,
+      address _delegationAddress
+    ) public view returns (bool) {
+      return true/false;
+    }
+
+<div id='checkConsolidationStatus'/>
+
+### How to check the consolidation status/relationship between two addresses on a collection?
+
+<b>Purpose:</b> The checkConsolidationStatus() function retrieves consolidation status/relationship between two addresses that may exist on a collection.
+
+<b>Description:</b> The function takes three parameters: _wallet1, _wallet2 and _collectionAddress. The _wallet1 and _wallet2 parameters can either be a delegator address, a delegation address or any other address. The _collectionAddress parameter is the address of the collection for which consolidation status/relationship may exist between the two addresses. This function returns a boolean value indicating whether a consolidation status/relationship exists between the two given addresses.
+
+    /**
+      * @dev Retrieve the consolidation status/relationship between two addresses.
+      * @param _wallet1 The delegator/delegation/other address.
+      * @param _wallet2 The delegator/delegation/other address.
+      * @param _collectionAddress The address of a specific collection.
+      * @return true if consolidation status/relationship exists between the two given addresses.
+    */
+ 
+    function checkConsolidationStatus(
+      address _wallet1,
+      address _wallet2,
+      address _collectionAddress
+    ) public view returns (bool) {
+      return true/false;
     }
 
 ## Other Retrieve Functions
