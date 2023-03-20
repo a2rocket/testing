@@ -23,6 +23,8 @@
 [How to retrieve the collection use case lock status that exists on a delegation address?](#retrieveCollectionUseCaseLockStatus)\
 [How to retrieve the collections & usecases history of a Delegator?](#retrieveFullHistoryOfDelegator)\
 [How to retrieve the active collections & usecases history of a Delegator?](#retrieveActiveHistoryOfDelegator)\
+[How to check if a delegator address is active or not?](#retrieveStatusOfActiveDelegator)\
+[How to check if a delegation address is the most recent one delegated?](#retrieveStatusOfMostRecentDelegation)
 
 ## Main Retrieve functions
 
@@ -479,5 +481,56 @@
       return activeCollections, activeUseCases;
     }
 
+<div id='retrieveStatusOfActiveDelegator'/>
 
+### How to check if a delegator address is active or not?
 
+<b>Purpose:</b> The retrieveStatusOfActiveDelegator() function checks if a delegator address who gave delegation rights to a delegation Address on a specific use case on a specific collection is active or not.
+
+<b>Description:</b> The function takes five parameters: _delegatorAddress, _collectionAddress, _delegationAddress, _date and _useCase. The _delegatorAddress parameter is the address of the delegator. The _collectionAddress parameter is the address of the collection for which the status, active or inactive, of the delegator will be retrieved. The _delegationAddress parameter is the address for which a delegator gave delegation rights. The _date parameter is the epoch time value for which the status of the delegator address will be retrieved, _date compares its value against the _expiryDate that was given when a delegation was registered. The _useCase parameter is the type of delegation for which the status of the delegator will be returned. This function returns a boolean variable that indicates if a delegator address is active or not.
+
+    /**
+      * @dev Retrieve if a delegator address is active or not.
+      * @param _delegatorAddress The address of delegator that will be checked.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _delegationAddress The delegation address for which all delegators will be returned.
+      * @param _date The epoch time value of a given date.
+      * @param _useCase The type of delegation.
+      * @return true if the delegator address is active, false otherwise.
+    */
+ 
+    function retrieveStatusOfActiveDelegator(
+      address _delegatorAddress,
+      address _collectionAddress,
+      address _delegationAddress,
+      uint256 _date,
+      uint8 _useCase
+    ) public view returns (bool) {
+      return true/false;
+    }
+
+<div id='retrieveStatusOfMostRecentDelegation'/>
+
+### How to check if a delegation address is the most recent one delegated?
+
+<b>Purpose:</b> The retrieveStatusOfMostRecentDelegation() function checks the status of a delegation address to identify if it's the most recent one delegated or not.
+
+<b>Description:</b> The function takes four parameters: _delegatorAddress, _collectionAddress, _delegationAddress and _useCase. The _delegatorAddress parameter is the address of the delegator. The _collectionAddress parameter is the address of the collection for which the status of the most recent delegation address will be retrieved. The _delegationAddress parameter is the address that will be checked if its the most recent delegated or not. The _useCase parameter is the type of delegation for which the status of the delegation Address will be returned. This function returns a boolean variable that indicates if a delegation address is the most rent one delegated or not.
+
+    /**
+      * @dev Retrieve if a delegation address is the most recent delegated one or not.
+      * @param _delegatorAddress The delegator address.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _delegationAddress The delegation address that will be checked.
+      * @param _useCase The type of delegation.
+      * @return true if the delegation address is the most recent one delegated, false otherwise.
+    */
+ 
+    function retrieveStatusOfMostRecentDelegation(
+      address _delegatorAddress,
+      address _collectionAddress,
+      address _delegationAddress,
+      uint8 _useCase
+    ) public view returns (bool) {
+      return true/false;
+    }
