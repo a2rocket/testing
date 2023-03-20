@@ -32,7 +32,7 @@
 
 ### How to retrieve all delegation addresses delegated from a Delegator on a specific use case on a collection?
 
-<b>Purpose:</b> The retrieveDelegationAddresses() function retrieves all delegation addresses (active AND inactive) assigned by a delegator on a specific use case on a specific collection.
+<b>Purpose:</b> The retrieveDelegationAddresses() function retrieves all delegation addresses (active & inactive) assigned by a delegator on a specific use case on a specific collection.
 
 <b>Description:</b> The function takes three parameters: _delegatorAddress, _collectionAddress and _useCase. The _delegatorAddress parameter is the address of the delegator. The _collectionAddress parameter is the address of the collection for which the delegation addresses will be retrieved. The _useCase parameter is the type of delegation for which all delegation addresses will be returned. This function returns an address array that includes all delegation addresses delegated from a delegator on a specific usecase on a specific collection.
 
@@ -56,7 +56,7 @@
 
 ### How to retrieve all delegators who gave delegation rights to a delegation Address on a specific use case on a collection?
 
-<b>Purpose:</b> The retrieveDelegators() function retrieves all delegators addresses (active AND inactive) who gave delegation rights to a delegation Address on a specific use case on a specific NFT collection
+<b>Purpose:</b> The retrieveDelegators() function retrieves all delegators addresses (active & inactive) who gave delegation rights to a delegation Address on a specific use case on a specific NFT collection
 
 <b>Description:</b> The function takes three parameters: _delegationAddress, _collectionAddress and _useCase. The _delegationAddress parameter is the address for which a delegator gave delegation rights. The _collectionAddress parameter is the address of the collection for which the delegators' addresses will be retrieved. The _useCase parameter is the type of delegation for which all delegators' addresses will be returned. This function returns an address array that includes all delegators' addresses who gave delegation rights to a delegation address on a specific usecase on a specific collection.
 
