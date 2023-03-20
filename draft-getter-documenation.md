@@ -10,16 +10,16 @@
 [How to retrieve the active delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveActiveDelegations)\
 [How to retrieve the active delegators who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveActiveDelegators)\
 [How to check if a delegator gave sub-delegation rights to a delegation address for a collection?](#retrieveSubDelegationStatus)\
-[How to check the consolidation status between two addresses on a collection?](#checkConsolidationStatus)\
-[How to check if a specific token id was registered during delegation on a specific use case on a collection?](#checkConsolidationStatus)
+[How to check the consolidation status between two addresses on a collection?](#checkConsolidationStatus)
 
 ## Other Retrieve Functions
 
 [How to retrieve all data about a delegator address for a specific usecase on a collection?](#retrieveDelegationAddressesTokensIDsandExpiredDates)\
 [How to retrieve all data about a delegation address for a specific usecase on a collection?](#retrieveDelegatorsTokensIDsandExpiredDates)\
+[How to check the delegation status given a specific token id?](#retrieveTokenStatus)\
 [How to retrieve the global lock status that exists on a delegation address?](#retrieveGloballockStatus)\
 [How to retrieve the collection lock status that exists on a delegation address?](#retrieveCollectionLockStatus)\
-[How to retrieve the collection use case lock status that exists on a delegation address?](#retrieveCollectionUseCaseLockStatus)\
+[How to retrieve the collection use case lock status that exists on a delegation address?](#retrieveCollectionUseCaseLockStatus)
 
 ## Main Retrieve functions
 
@@ -315,6 +315,34 @@
       uint8 _useCase
     ) public view returns (address[]) {
       return delegatorsAddresses, tokenIDs, allTokens, allExpirations;
+    }
+
+<div id='retrieveTokenStatus'/>
+
+### How to check the delegation status given a specific token id? 
+
+<b>Purpose:</b> The retrieveTokenStatus() function retrieves the status of a delegation given a specific token id.
+
+<b>Description:</b> The function takes five parameters: _delegatorAddress, _collectionAddress, _delegationAddress, _useCase and _tokenid. The _delegatorAddress parameter is the address that registered a delegation using a specific token id of a collection. The _delegatorAddress must match the token owner address of that specific token id within the collection. The _collectionAddress parameter is the address of the collection for which delegation rights were given. The _delegationAddress parameter is the address for which delegation rights were given on that specific token id. The _useCase parameter is the type of delegation. This function returns a boolean value indicating whether delegation rights were given for the specific token id by the token owner.
+    
+    /**
+      * @dev Retrieve the delegation status given a specific token id.
+      * @param _delegatorAddress The delegator/token owner address.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _delegationAddress The delegation address for which full data will be returned.
+      * @param _useCase The type of delegation.
+      * @param _tokenid The unique token id.
+      * @return true if the delegation rights were given by the token owner of the specific token id.
+    */
+ 
+    function retrieveTokenStatus(
+      address _delegatorAddress,
+      address _collectionAddress,
+      address _delegationAddress,
+      uint8 _useCase,
+      uint256 _tokenid
+    ) public view returns (bool) {
+      return true/false;
     }
     
 <div id='retrieveGloballockStatus'/>
