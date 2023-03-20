@@ -169,7 +169,7 @@
 
 <b>Purpose:</b> The retrieveActiveDelegations() function retrieves the active delegation addresses assigned by a delegator on a specific use case on a specific collection.
 
-<b>Description:</b> The function takes four parameters: _delegatorAddress, _collectionAddress, _date and _useCase. The _delegatorAddress parameter is the address of the delegator. The _collectionAddress parameter is the address of the collection for which the active delegation addresses will be retrieved. The _date parameter is the epoch time value for which the active delegation addresses will be retrieved, _date compares its value against the date that was given when a delegation was registered. The _useCase parameter is the type of delegation for which all delegation addresses will be returned. This function returns an address array that includes the active delegation addresses delegated from a delegator on a specific usecase on a specific collection.
+<b>Description:</b> The function takes four parameters: _delegatorAddress, _collectionAddress, _date and _useCase. The _delegatorAddress parameter is the address of the delegator. The _collectionAddress parameter is the address of the collection for which the active delegation addresses will be retrieved. The _date parameter is the epoch time value for which the active delegation addresses will be retrieved, _date compares its value against the _expiryDate that was given when a delegation was registered. The _useCase parameter is the type of delegation for which all delegation addresses will be returned. This function returns an address array that includes the active delegation addresses delegated from a delegator on a specific usecase on a specific collection.
 
     /**
       * @dev Retrieve the active delegation addresses delegated from a delegator.
@@ -191,13 +191,11 @@
 
 <div id='retrieveActiveDelegators'/>
 
-## Other Retrieve Functions
-
 ### How to retrieve the active delegators who gave delegation rights to a delegation Address on a specific use case on a collection?
 
 <b>Purpose:</b> The retrieveActiveDelegators() function retrieves the active delegators addresses who gave delegation rights to a delegation Address on a specific use case on a specific NFT collection
 
-<b>Description:</b> The function takes four parameters: _delegationAddress, _collectionAddress, _date and _useCase. The _delegationAddress parameter is the address for which a delegator gave delegation rights. The _collectionAddress parameter is the address of the collection for which the delegators' addresses will be retrieved. The _date parameter is the epoch time value for which the active delegators' addresses will be retrieved, _date compares its value against the date that was given when a delegation was registered. The _useCase parameter is the type of delegation for which all delegators' addresses will be returned. This function returns an address array that includes the active delegators' addresses who gave delegation rights to a delegation address on a specific usecase on a specific collection.
+<b>Description:</b> The function takes four parameters: _delegationAddress, _collectionAddress, _date and _useCase. The _delegationAddress parameter is the address for which a delegator gave delegation rights. The _collectionAddress parameter is the address of the collection for which the delegators' addresses will be retrieved. The _date parameter is the epoch time value for which the active delegators' addresses will be retrieved, _date compares its value against the _expiryDate that was given when a delegation was registered. The _useCase parameter is the type of delegation for which all delegators' addresses will be returned. This function returns an address array that includes the active delegators' addresses who gave delegation rights to a delegation address on a specific usecase on a specific collection.
 
     /**
       * @dev Retrieve the active delegators' addresses who gave delegation rights.
@@ -218,6 +216,8 @@
     }
 
 <div id='retrieveGloballockStatus'/>
+
+## Other Retrieve Functions
 
 ### How to retrieve the global lock status that exists on a delegation address?
 
