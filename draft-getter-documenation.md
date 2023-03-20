@@ -4,6 +4,8 @@
 [How to retrieve all delegators who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveDelegators)\
 [How to check if a delegation exists given a delegator address?](#retrieveDelegatorStatusOfDelegation)\
 [How to check if a delegation exists given a delegation address?](#retrieveDelegationAddressStatusOfDelegation)\
+[How to retrieve the most recent delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveMostRecentDelegation)\
+[How to retrieve the most recent delegator who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveMostRecentDelegator)\
 [How to retrieve the global lock status that exists on a delegation address?](#retrieveGloballockStatus)\
 [How to retrieve the collection lock status that exists on a delegation address?](#retrieveCollectionLockStatus)\
 [How to retrieve the collection use case lock status that exists on a delegation address?](#retrieveCollectionUseCaseLockStatus)\
@@ -21,7 +23,7 @@
       * @param _delegatorAddress The delegator address.
       * @param _collectionAddress The address of a specific collection.
       * @param _useCase The type of delegation.
-      * @return an array with all delegation addresses
+      * @return an array with all delegation addresses.
     */
  
     function retrieveDelegationAddresses(
@@ -41,11 +43,11 @@
 <b>Description:</b> The function takes three parameters: _delegationAddress, _collectionAddress and _useCase. The _delegationAddress parameter is the address for which a delegator gave delegation rights. The _collectionAddress parameter is the address of the collection for which the delegators' addresses will be retrieved. The _useCase parameter is the type of delegation for which all delegators' addresses will be returned. This function returns an address array that includes all delegators' addresses who gave delegation rights to a delegation address on a specific usecase on a specific collection.
 
     /**
-      * @dev Retrieve all delegators' addresses who gace delegation rights.
+      * @dev Retrieve all delegators' addresses who gave delegation rights.
       * @param _delegationAddress The delegation address for which all delegators will be returned.
       * @param _collectionAddress The address of a specific collection.
       * @param _useCase The type of delegation.
-      * @return an array with all delegators' addresses
+      * @return an array with all delegators' addresses.
     */
  
     function retrieveDelegators(
@@ -102,6 +104,54 @@
       uint8 _useCase
     ) public view returns (bool) {
       return true/false;
+    }
+
+<div id='retrieveMostRecentDelegation'/>
+
+### How to retrieve the most recent delegation address delegated from a Delegator on a specific use case on a collection?
+
+<b>Purpose:</b> The retrieveMostRecentDelegation() function retrieves the most recent delegation addresses assigned by a delegator on a specific use case on a specific collection.
+
+<b>Description:</b> The function takes three parameters: _delegatorAddress, _collectionAddress and _useCase. The _delegatorAddress parameter is the address of the delegator. The _collectionAddress parameter is the address of the collection for which the most recent delegation address will be retrieved. The _useCase parameter is the type of delegation for which the most recent delegation address will be returned. This function returns the most recent address delegated from a delegator on a specific usecase on a specific collection.
+
+    /**
+      * @dev Retrieve the most recent delegation address delegated from a delegator.
+      * @param _delegatorAddress The delegator address.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _useCase The type of delegation.
+      * @return the most recent delegation address.
+    */
+ 
+    function retrieveMostRecentDelegation(
+      address _delegatorAddress,
+      address _collectionAddress,
+      uint8 _useCase
+    ) public view returns (address) {
+      return delegationAddress;
+    }
+
+<div id='retrieveMostRecentDelegator'/>
+
+### How to retrieve the most recent delegator who gave delegation rights to a delegation Address on a specific use case on a collection?
+
+<b>Purpose:</b> The retrieveMostRecentDelegator() function retrieves most recent delegator who gave delegation rights to a delegation Address on a specific use case on a specific NFT collection
+
+<b>Description:</b> The function takes three parameters: _delegationAddress, _collectionAddress and _useCase. The _delegationAddress parameter is the address for which a delegator gave delegation rights. The _collectionAddress parameter is the address of the collection for which the delegators' addresses will be retrieved. The _useCase parameter is the type of delegation for which all delegators' addresses will be returned. This function returns the most recent delegator address who gave delegation rights to a delegation address on a specific usecase on a specific collection.
+
+    /**
+      * @dev Retrieve the most recent delegator address.
+      * @param _delegationAddress The delegation address for which the most recent delegator will be returned.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _useCase The type of delegation.
+      * @return the most recent delegator address.
+    */
+ 
+    function retrieveMostRecentDelegator(
+      address _delegationAddress,
+      address _collectionAddress,
+      uint8 _useCase
+    ) public view returns (address) {
+      return delegatorsAddress;
     }
 
 <div id='retrieveGloballockStatus'/>
