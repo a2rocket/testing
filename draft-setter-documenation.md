@@ -122,12 +122,12 @@
 
 ### How to register multiple Delegation Addresses?
 
-<b>Purpose:</b> The batchDelegations() function registers delegation rights to 1..5 delegation addresses on various use cases of different collections.
+<b>Purpose:</b> The batchDelegations() function registers delegation rights to 1 to 5 delegation addresses on various use cases of different collections.
 
 <b>Description:</b> The function takes six parameters:  _collectionAddresses[], _delegationAddresses[], _expiryDates[], _useCases[], _allTokens[] and _tokenids[]. The _collectionAddresses[] parameter is an array that includes the collection addresses for each one of the delegation addresses that will be registered. The _delegationAddresses[] parameter is an array that includes the delegation addresses that will be registered for each one of the collection addresses. The _expiryDates[] parameter is an array that includes the expiry date for each one of the delegations. The _useCases[] parameter is an array that includes the type of a delegation that will be registered. The _allTokens parameter is an array that refers to the delegated tokens of each collection. The _tokenids[] parameter is an array that specifies the token id assigned to a delegation.
 
       /**
-        * @dev Registers 1..5 delegation addresses to a delegator.
+        * @dev Registers 1 to 5 delegation addresses to a delegator.
         * @param _collectionAddresses[] The addresses of specific collections.
         * @param _delegationAddresses[] The delegation addresses.
         * @param _expiryDates[] The expiry date of each delegation.
@@ -149,12 +149,12 @@
 
 ### How to revoke multiple Delegation Addresses?
 
-<b>Purpose:</b> The batchRevocations() function revokes the delegation rights given to 1..5 delegation addresses on various use cases of different collections.
+<b>Purpose:</b> The batchRevocations() function revokes the delegation rights given to 1 to 5 delegation addresses on various use cases of different collections.
 
 <b>Description:</b> The function takes three parameters:  _collectionAddresses[], _delegationAddresses[] and _useCases[]. The _collectionAddresses parameter is an array that includes the collection addresses for each one of the delegation addresses that will be revoked. The _delegationAddresses parameter is an array that includes the delegation addresses for each one of the collection addresses that will be revoked. The _useCases parameter is an array that includes the types of delegations that will be revoked. 
 
       /**
-        * @dev Revokes 1..5 delegation addresses from a delegator.
+        * @dev Revokes 1 to 5 delegation addresses from a delegator.
         * @param _collectionAddresses[] The addresses of specific collections.
         * @param _delegationAddresses[] The delegation addresses.
         * @param _ useCases[] The types of delegations.
