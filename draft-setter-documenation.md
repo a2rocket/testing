@@ -77,7 +77,7 @@
 
 ### How to revoke a Delegation Address?
 
-<b>Purpose:</b> The revokeDelegationAddress() function revokes the delegation rights given to a delegation address on a specific use case for a specific NFT collection.
+<b>Purpose:</b> The revokeDelegationAddress() function revokes the delegation rights given to a delegation address on a specific use case for a specific collection.
 
 <b>Description:</b> The function takes three parameters: _collectionAddress, _delegationAddress and _useCase. The _collectionAddress parameter is the address of the collection that the delegation will be revoked. The _delegationAddress parameter is the address that will be revoked. The _useCase parameter is the type of delegation that will be revoked. 
 
@@ -99,7 +99,7 @@
 
 ### How to revoke a Delegation Address using an address with sub-delegation rights?
 
-<b>Purpose:</b> The revokeDelegationAddressUsingSubdelegation() function revokes the delegation rights given to a delegation address on a specific use case for a specific NFT collection by taking into consideration the sub-delegation rights given by a delegator to a specific delegation Address.
+<b>Purpose:</b> The revokeDelegationAddressUsingSubdelegation() function revokes the delegation rights given to a delegation address on a specific use case for a specific collection by taking into consideration the sub-delegation rights given by a delegator to a specific delegation Address.
 
 <b>Description:</b> The function takes four parameters: _delegatorAddress, _collectionAddress, _delegationAddress and _useCase. The _delegatorAddress parameter is the address of the delegator who gave sub-delegation rights to the address that will execute this function. The _collectionAddress parameter is the address of the collection that the delegation will be revoked. The _delegationAddress parameter is the address that will be revoked. The _useCase parameter is the type of delegation that will be revoked. 
 
@@ -122,7 +122,7 @@
 
 ### How to register multiple Delegation Addresses?
 
-<b>Purpose:</b> The batchDelegations() function registers delegation rights to 1..5 delegation addresses on various use cases of different NFT collections.
+<b>Purpose:</b> The batchDelegations() function registers delegation rights to 1..5 delegation addresses on various use cases of different collections.
 
 <b>Description:</b> The function takes six parameters:  _collectionAddresses[], _delegationAddresses[], _expiryDates[], _useCases[], _allTokens[] and _tokenids[]. The _collectionAddresses[] parameter is an array that includes the collection addresses for each one of the delegation addresses that will be registered. The _delegationAddresses[] parameter is an array that includes the delegation addresses that will be registered for each one of the collection addresses. The _expiryDates[] parameter is an array that includes the expiry date for each one of the delegations. The _useCases[] parameter is an array that includes the type of a delegation that will be registered. The _allTokens parameter is an array that refers to the delegated tokens of each collection. The _tokenids[] parameter is an array that specifies the token id assigned to a delegation.
 
@@ -149,7 +149,7 @@
 
 ### How to revoke multiple Delegation Addresses?
 
-<b>Purpose:</b> The batchRevocations() function revokes the delegation rights given to 1..5 delegation addresses on various use cases of different NFT collections.
+<b>Purpose:</b> The batchRevocations() function revokes the delegation rights given to 1..5 delegation addresses on various use cases of different collections.
 
 <b>Description:</b> The function takes three parameters:  _collectionAddresses[], _delegationAddresses[] and _useCases[]. The _collectionAddresses parameter is an array that includes the collection addresses for each one of the delegation addresses that will be revoked. The _delegationAddresses parameter is an array that includes the delegation addresses for each one of the collection addresses that will be revoked. The _useCases parameter is an array that includes the types of delegations that will be revoked. 
 
