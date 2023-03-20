@@ -6,6 +6,8 @@
 [How to check if a delegation exists given a delegation address?](#retrieveDelegationAddressStatusOfDelegation)\
 [How to retrieve the most recent delegation address delegated from a Delegator on a specific use case on a collection?](#retrieveMostRecentDelegation)\
 [How to retrieve the most recent delegator who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveMostRecentDelegator)\
+[How to retrieve the active delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveActiveDelegations)\
+[How to retrieve the active delegators who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveActiveDelegators)\
 [How to retrieve the global lock status that exists on a delegation address?](#retrieveGloballockStatus)\
 [How to retrieve the collection lock status that exists on a delegation address?](#retrieveCollectionLockStatus)\
 [How to retrieve the collection use case lock status that exists on a delegation address?](#retrieveCollectionUseCaseLockStatus)\
@@ -152,6 +154,58 @@
       uint8 _useCase
     ) public view returns (address) {
       return delegatorsAddress;
+    }
+
+<div id='retrieveActiveDelegations'/>
+
+### How to retrieve the active delegation addresses delegated from a Delegator on a specific use case on a collection?
+
+<b>Purpose:</b> The retrieveActiveDelegations() function retrieves the active delegation addresses assigned by a delegator on a specific use case on a specific collection.
+
+<b>Description:</b> The function takes four parameters: _delegatorAddress, _collectionAddress, _date and _useCase. The _delegatorAddress parameter is the address of the delegator. The _collectionAddress parameter is the address of the collection for which the active delegation addresses will be retrieved. The _date parameter is the epoch time value for which the active delegation addresses will be retrieved, _date compares its value against the date that was given when a delegation was registered. The _useCase parameter is the type of delegation for which all delegation addresses will be returned. This function returns an address array that includes the active delegation addresses delegated from a delegator on a specific usecase on a specific collection.
+
+    /**
+      * @dev Retrieve the active delegation addresses delegated from a delegator.
+      * @param _delegatorAddress The delegator address.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _date The epoch time value of a given date.
+      * @param _useCase The type of delegation.
+      * @return an array with all delegation addresses.
+    */
+ 
+    function retrieveActiveDelegations(
+      address _delegatorAddress,
+      address _collectionAddress,
+      uint256 _date,
+      uint8 _useCase
+    ) public view returns (address[]) {
+      return delegationAddresses;
+    }
+
+<div id='retrieveActiveDelegators'/>
+
+### How to retrieve the active delegators who gave delegation rights to a delegation Address on a specific use case on a collection?
+
+<b>Purpose:</b> The retrieveActiveDelegators() function retrieves the active delegators addresses who gave delegation rights to a delegation Address on a specific use case on a specific NFT collection
+
+<b>Description:</b> The function takes four parameters: _delegationAddress, _collectionAddress, _date and _useCase. The _delegationAddress parameter is the address for which a delegator gave delegation rights. The _collectionAddress parameter is the address of the collection for which the delegators' addresses will be retrieved. The _date parameter is the epoch time value for which the active delegators' addresses will be retrieved, _date compares its value against the date that was given when a delegation was registered. The _useCase parameter is the type of delegation for which all delegators' addresses will be returned. This function returns an address array that includes the active delegators' addresses who gave delegation rights to a delegation address on a specific usecase on a specific collection.
+
+    /**
+      * @dev Retrieve the active delegators' addresses who gave delegation rights.
+      * @param _delegationAddress The delegation address for which all delegators will be returned.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _date The epoch time value of a given date.
+      * @param _useCase The type of delegation.
+      * @return an array with all delegators' addresses.
+    */
+ 
+    function retrieveActiveDelegators(
+      address _delegationAddress,
+      address _collectionAddress,
+      uint256 _date,
+      uint8 _useCase
+    ) public view returns (address[]) {
+      return delegatorsAddresses;
     }
 
 <div id='retrieveGloballockStatus'/>
