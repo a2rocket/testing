@@ -4,7 +4,7 @@
 [How to retrieve all delegators who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveDelegators)\
 [How to check if a delegation exists given a delegator address?](#retrieveDelegatorStatusOfDelegation)\
 [How to check if a delegation exists given a delegation address?](#retrieveDelegationAddressStatusOfDelegation)\
-[How to retrieve the most recent delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveMostRecentDelegation)\
+[How to retrieve the most recent delegation address delegated from a Delegator on a specific use case on a collection?](#retrieveMostRecentDelegation)\
 [How to retrieve the most recent delegator who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveMostRecentDelegator)\
 [How to retrieve the global lock status that exists on a delegation address?](#retrieveGloballockStatus)\
 [How to retrieve the collection lock status that exists on a delegation address?](#retrieveCollectionLockStatus)\
