@@ -13,6 +13,8 @@
 
 ## Other Retrieve Functions
 
+[How to retrieve all data about a delegator address for a specific usecase on a collection?](#retrieveDelegationAddressesTokensIDsandExpiredDates)\
+[How to retrieve all data about a delegation address for a specific usecase on a collection?](#retrieveDelegatorsTokensIDsandExpiredDates)\
 [How to retrieve the global lock status that exists on a delegation address?](#retrieveGloballockStatus)\
 [How to retrieve the collection lock status that exists on a delegation address?](#retrieveCollectionLockStatus)\
 [How to retrieve the collection use case lock status that exists on a delegation address?](#retrieveCollectionUseCaseLockStatus)\
@@ -215,9 +217,57 @@
       return delegatorsAddresses;
     }
 
-<div id='retrieveGloballockStatus'/>
-
 ## Other Retrieve Functions
+
+<div id='retrieveDelegationAddressesTokensIDsandExpiredDates'/>
+
+### How to retrieve all data about a delegator address for a specific usecase on a collection?
+
+<b>Purpose:</b> The retrieveDelegationAddressesTokensIDsandExpiredDates() function retrieves for a specific use case on a specific collection, the delegation addresses, token IDs, expiry dates and if the delegator assigned all tokens owned or a specific token when codnucting a delegation.
+
+<b>Description:</b> The function takes three parameters: _delegatorAddress, _collectionAddress and _useCase. The _delegatorAddress parameter is the address of the delegator. The _collectionAddress parameter is the address of the collection for which full data will be retrieved. The _useCase parameter is the type of delegation for which full data will be returned. This function returns an address array that includes all delegation addresses delegated from a delegator on a specific usecase on a specific collection, a uint array that includes the token ids that were registered, a bool array that indicates if all tokens owned by the delegator were assigned during the registration or just a specific token id and a uint array that includes expiry dates of each delegation.
+
+    /**
+      * @dev Retrieve full data about a delegator.
+      * @param _delegatorAddress The delegator address for which full data will be returned.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _useCase The type of delegation.
+      * @return an array with all delegation addresses, an array with the token ids registered, an array that indicates if the delegator delegated all tokens owned or a specific token and an array with the expiry dates of each delegation.
+    */
+ 
+    function retrieveDelegationAddressesTokensIDsandExpiredDates(
+      address _delegatorAddress,
+      address _collectionAddress,
+      uint8 _useCase
+    ) public view returns (address[]) {
+      return delegationAddresses, tokenIDs, allTokens, allExpirations;
+    }
+    
+<div id='retrieveDelegatorsTokensIDsandExpiredDates'/>
+
+### How to retrieve all data about a delegation address for a specific usecase on a collection?
+
+<b>Purpose:</b> The retrieveDelegatorsTokensIDsandExpiredDates() function retrieves for a specific use case on a specific collection, the delegators' addresses, token IDs, expiry dates and if the delegator assigned all tokens owned or a specific token when codnucting a delegation.
+
+<b>Description:</b> The function takes three parameters: _delegationAddress, _collectionAddress and _useCase. The _delegationAddress parameter is the address for which full data will be retrieved. The _collectionAddress parameter is the address of the collection for which full data will be retrieved. The _useCase parameter is the type of delegation for which full data will be returned. This function returns an address array that includes all delegators' addresses who gave delegation rights to a delegation address on a specific usecase on a specific collection, a uint array that includes the token ids that were registered, a bool array that indicates if all tokens owned by the delegator were assigned during the registration or just a specific token id and a uint array that includes expiry dates of each delegation.
+
+    /**
+      * @dev Retrieve full data about a delegation address.
+      * @param _delegationAddress The delegation address for which full data will be returned.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _useCase The type of delegation.
+      * @return an array with all delegators' addresses, an array with the token ids registered, an array that indicates if the delegator delegated all tokens owned or a specific token and an array with the expiry dates of each delegation.
+    */
+ 
+    function retrieveDelegatorsTokensIDsandExpiredDates(
+      address _delegationAddress,
+      address _collectionAddress,
+      uint8 _useCase
+    ) public view returns (address[]) {
+      return delegatorsAddresses, tokenIDs, allTokens, allExpirations;
+    }
+    
+<div id='retrieveGloballockStatus'/>
 
 ### How to retrieve the global lock status that exists on a delegation address?
 
