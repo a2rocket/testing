@@ -1,8 +1,58 @@
 # NFTDelegation Smart Contract Documenation
 ## Getter/Retrieve functions
+[How to retrieve all delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveDelegationAddresses)\
+[How to retrieve all delegators who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveDelegators)\
 [How to retrieve the global lock status that exists on a delegation address?](#retrieveGloballockStatus)\
 [How to retrieve the collection lock status that exists on a delegation address?](#retrieveCollectionLockStatus)\
 [How to retrieve the collection use case lock status that exists on a delegation address?](#retrieveCollectionUseCaseLockStatus)\
+
+<div id='retrieveDelegationAddresses'/>
+
+### How to retrieve all delegation addresses delegated from a Delegator on a specific use case on a collection?
+
+<b>Purpose:</b> The retrieveDelegationAddresses() function retrieves all delegation addresses (active AND inactive) assigned by a delegator on a specific use case on a specific collection.
+
+<b>Description:</b> The function takes three parameters: _delegatorAddress, _collectionAddress and _useCase. The _delegatorAddress parameter is the address of the delegator. The _collectionAddress parameter is the address of the collection for which the delegation addresses will be retrieved. The _useCase parameter is the type of delegation for which all delegation addresses will be returned. This function returns an address array that includes all delegation addresses delegated from a delegator on a specific usecase on a specific collection.
+
+    /**
+      * @dev Retrieve all delegation addresses delegated from a delegator.
+      * @param _delegatorAddress The delegator address.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _useCase The type of delegation.
+      * @return an array with all delegation addresses
+    */
+ 
+    function retrieveDelegationAddresses(
+      address _delegatorAddress,
+      address _collectionAddress,
+      uint8 _useCase
+    ) public view returns (address[]) {
+      return delegationAddresses;
+    }
+    
+<div id='retrieveDelegators'/>
+
+### How to retrieve all delegators who gave delegation rights to a delegation Address on a specific use case on a collection?
+
+<b>Purpose:</b> The retrieveDelegators() function retrieves all delegators addresses (active AND inactive) who gave delegation rights to a delegation Address on a specific use case on a specific NFT collection
+
+<b>Description:</b> The function takes three parameters: _delegationAddress, _collectionAddress and _useCase. The _delegationAddress parameter is the address for which a delegator gave delegation rights. The _collectionAddress parameter is the address of the collection for which the delegators' addresses will be retrieved. The _useCase parameter is the type of delegation for which all delegators' addresses will be returned. This function returns an address array that includes all delegators' addresses who gave delegation rights to a delegation address on a specific usecase on a specific collection.
+
+    /**
+      * @dev Retrieve all delegators' addresses who gace delegation rights.
+      * @param _delegationAddress The delegation address for which all delegators will be returned.
+      * @param _collectionAddress The address of a specific collection.
+      * @param _useCase The type of delegation.
+      * @return an array with all delegators' addresses
+    */
+ 
+    function retrieveDelegators(
+      address _delegationAddress,
+      address _collectionAddress,
+      uint8 _useCase
+    ) public view returns (address[]) {
+      return delegatorsAddresses;
+    }
 
 <div id='retrieveGloballockStatus'/>
 
@@ -10,7 +60,7 @@
 
 <b>Purpose:</b> The retrieveGloballockStatus() function retrieves the global lock status of a delegation Address.
 
-<b>Description:</b> The function takes one parameter: _delegationAddress. The _delegationAddress parameter is the address for which the global lock status will be returned. It returns a boolean value indicating whether the global lock is enabled or not, if true it means that the _delegationAddress is locked and cannot be registered in any other usecase or collection.
+<b>Description:</b> The function takes one parameter: _delegationAddress. The _delegationAddress parameter is the address for which the global lock status will be returned. This function returns a boolean value indicating whether the global lock is enabled or not, if true it means that the _delegationAddress is locked and cannot be registered in any other usecase or collection.
 
     /**
       * @dev Retrieve the global lock status of a delegation address.
@@ -30,7 +80,7 @@
 
 <b>Purpose:</b> The retrieveCollectionLockStatus() function retrieves the collection lock status of a delegation Address.
 
-<b>Description:</b> The function takes two parameters: _collectionAddress and _delegationAddress. The _collectionAddress parameter is the address of the collection for which the collection lock status of a delegation Address will be retrieved. The _delegationAddress parameter is the address for which the collection lock status will be returned. It returns a boolean value indicating whether the collection lock is enabled or not, if true it means that the _delegationAddress is locked and cannot be registered within the same collection.
+<b>Description:</b> The function takes two parameters: _collectionAddress and _delegationAddress. The _collectionAddress parameter is the address of the collection for which the collection lock status of a delegation Address will be retrieved. The _delegationAddress parameter is the address for which the collection lock status will be returned. This function returns a boolean value indicating whether the collection lock is enabled or not, if true it means that the _delegationAddress is locked and cannot be registered within the same collection.
 
     /**
       * @dev Retrieve the collection lock status of a delegation address.
@@ -52,7 +102,7 @@
 
 <b>Purpose:</b> The retrieveCollectionUseCaseLockStatus() function retrieves the collection use case lock status of a delegation Address.
 
-<b>Description:</b> The function takes three parameters: _collectionAddress, _delegationAddress and _useCase. The _collectionAddress parameter is the address of the collection for which the collection use case lock status of a delegation Address will be retrieved. The _delegationAddress parameter is the address for which the collection use case lock status will be returned. It returns a boolean value indicating whether the collection use case lock is enabled or not, if true it means that the _delegationAddress is locked and cannot be registered for the same use case within the same collection.
+<b>Description:</b> The function takes three parameters: _collectionAddress, _delegationAddress and _useCase. The _collectionAddress parameter is the address of the collection for which the collection use case lock status of a delegation Address will be retrieved. The _delegationAddress parameter is the address for which the collection use case lock status will be returned. The _useCase parameter is the type of delegation for which the collection use case status will be returned. This function returns a boolean value indicating whether the collection use case lock is enabled or not, if true it means that the _delegationAddress is locked and cannot be registered for the same use case within the same collection.
 
     /**
       * @dev Retrieve the collection use case lock status of a delegation address.
