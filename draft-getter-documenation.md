@@ -9,7 +9,9 @@
 [How to retrieve the most recent delegator who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveMostRecentDelegator)\
 [How to retrieve the active delegation addresses delegated from a Delegator on a specific use case on a collection?](#retrieveActiveDelegations)\
 [How to retrieve the active delegators who gave delegation rights to a delegation Address on a specific use case on a collection?](#retrieveActiveDelegators)\
-
+[How to check if a delegator gave sub-delegation status on delegation address a specific use case on a collection?](#retrieveSubDelegationStatus)\
+[How to check if a consolidation exists on a specific use case on a collection?](#checkConsolidationStatus)\
+[How to check if a specific token id was registered during delegation on a specific use case on a collection?](#checkConsolidationStatus)\
 
 ## Other Retrieve Functions
 
