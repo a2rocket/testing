@@ -20,7 +20,9 @@
 [How to check the delegation status given a specific token id?](#retrieveTokenStatus)\
 [How to retrieve the global lock status that exists on a delegation address?](#retrieveGloballockStatus)\
 [How to retrieve the collection lock status that exists on a delegation address?](#retrieveCollectionLockStatus)\
-[How to retrieve the collection use case lock status that exists on a delegation address?](#retrieveCollectionUseCaseLockStatus)
+[How to retrieve the collection use case lock status that exists on a delegation address?](#retrieveCollectionUseCaseLockStatus)\
+[How to retrieve the collections & usecases history of a Delegator?](#retrieveFullHistoryOfDelegator)\
+[How to retrieve the active collections & usecases history of a Delegator?](#retrieveActiveHistoryOfDelegator)\
 
 ## Main Retrieve functions
 
@@ -315,7 +317,7 @@
       address _delegatorAddress,
       address _collectionAddress,
       uint8 _useCase
-    ) public view returns (address[]) {
+    ) public view returns (address[], uint256[], bool[], uint256[]) {
       return delegationAddresses, tokenIDs, allTokens, allExpirations;
     }
     
@@ -339,7 +341,7 @@
       address _delegationAddress,
       address _collectionAddress,
       uint8 _useCase
-    ) public view returns (address[]) {
+    ) public view returns (address[], uint256[], bool[], uint256[]) {
       return delegatorsAddresses, tokenIDs, allTokens, allExpirations;
     }
 
@@ -437,6 +439,45 @@
       return collectionUsecaseLock;
     }
 
+<div id='retrieveFullHistoryOfDelegator'/>
+
+### How to retrieve the collections & usecases history of a Delegator?
+
+<b>Purpose:</b> The retrieveFullHistoryOfDelegator() function retrieves the collections & usecases history of a delegator.
+
+<b>Description:</b> The function takes one parameter: _delegatorAddress. The _delegatorAddress parameter is the address of the delegator. This function returns an address array that includes all collections for which the delegator registered a delegation address as well as a uint array that holds the use cases.
+
+    /**
+      * @dev Retrieve the collections & usecases history of a delegator.
+      * @param _delegatorAddress The delegator address.
+      * @return an address array that holds the collections as well as a unit array that holds the usecases registered.
+    */
+ 
+    function retrieveFullHistoryOfDelegator(
+      address _delegatorAddress
+    ) public view returns (address[], unit256[]) {
+      return collectionsRegistered, usecasesRegistered;
+    }
+
+<div id='retrieveActiveHistoryOfDelegator'/>
+
+### How to retrieve the active collections & usecases history of a Delegator?
+
+<b>Purpose:</b> The retrieveActiveHistoryOfDelegator() function retrieves the active collections & usecases history of a delegator.
+
+<b>Description:</b> The function takes one parameter: _delegatorAddress. The _delegatorAddress parameter is the address of the delegator. This function returns an address array that includes all active collections for which the delegator registered a delegation address as well as a uint array that holds the active use cases. The main difference between the retrieveFullHistoryOfDelegator() function is that in this function the revoked delegations are not taken into consideration. 
+
+    /**
+      * @dev Retrieve the active collections & usecases history of a delegator.
+      * @param _delegatorAddress The delegator address.
+      * @return an address array that holds the active collections as well as a unit array that holds the active usecases.
+    */
+ 
+    function retrieveActiveHistoryOfDelegator(
+      address _delegatorAddress
+    ) public view returns (address[], unit256[]) {
+      return activeCollections, activeUseCases;
+    }
 
 
 
