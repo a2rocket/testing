@@ -64,7 +64,7 @@
      */
 
     function registerDelegationAddressUsingSubDelegation(
-        address _ delegatorAddress,
+        address _delegatorAddress,
         address _collectionAddress,
         address _delegationAddress,
         uint256 _expiryDate,
