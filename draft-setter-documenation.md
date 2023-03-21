@@ -177,7 +177,7 @@
       /**
         * @dev Updates a delegation address.
         * @param _collectionAddress The address of a specific collection.
-        * @param _newdelegationAddress The previous delegation address.
+        * @param _olddelegationAddress The previous delegation address.
         * @param _newdelegationAddress The new delegation address.
         * @param _expiryDate The expiry date of the delegation.
         * @param _useCase The type of delegation.
