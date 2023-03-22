@@ -306,7 +306,7 @@ Revoke a delegation address on behalf of a delegator on 0x33FD426905F149f8376e22
 _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4\
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
-_useCase = 1\
+_useCase = 1
 
 ***Post-execution:***\
 \
