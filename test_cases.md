@@ -7,10 +7,10 @@
 [Update a delegation address on The Memes by 6529 collection.](#updateDelegationAddress)\
 [Register a delegation address using a wallet with subdelegation rights](#registerDelegationAddressUsingSubDelegation)\
 [Revoke a delegation address using a wallet with subdelegation rights](#revokeDelegationAddressUsingSubdelegation)\
-[Check consolidation between two addresses](#)\
-[Retrieve delegation address](#)\
-[Retrieve delegators](#)\
-[How does it work for project developers?](#)
+[Check consolidation between two addresses - pending](#)\
+[Retrieve delegation address - pending](#)\
+[Retrieve delegators - pending](#)\
+[How does it work for project developers? - pending](#)
 
 <div id='setupEnvironment'/>
 
