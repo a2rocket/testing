@@ -1,9 +1,12 @@
 # NFT Delegation Smart Contract
 ## Sample Test Cases
 
-[How and where to run the test cases?](#setupEnvrionment)\
+[How and where to run the test cases?](#setupEnvironment)\
 [Register a delegation address on The Memes by 6529 collection.](#registerDelegationAddressCollection)\
+[Revoke a delegation address on The Memes by 6529 collection.](#revokeDelegationAddress)\
+[Update a delegation address on The Memes by 6529 collection.](#updateDelegationAddress)\
 [Register a delegation address using a wallet with subdelegation rights](#)\
+[Revoke a delegation address using a wallet with subdelegation rights](#)\
 [Check consolidation between two addresses](#)\
 [Retrieve delegation address](#)\
 [Retrieve delegators](#)\
@@ -37,76 +40,170 @@ You are always welcome to run the smart contract code and conduct the tests usin
 
 ### Test Case ID: 1
 
-Test Case Objective: Register a delegation address on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for all use cases (1-15).\
+***Test Case Objective:*** \
 \
-Prerequisite:
+Register a delegation address on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for all use cases (1-15).\
+\
+***Prerequisite:***
 1. Usecase number exists 
 2. Delegation Address is not locked
 <!-- end of the list -->
 
-Input Data:\
+***Input Data:***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
 _expiryDate = 1682080764 (21/04/2023)\
 _useCase = 1\
 _allTokens = true\
-_tokenid = 0\
+_tokenid = 0
+
+***Post-execution:***\
 \
-Expected Output: The delegation will be registered.\
-\
-Actual Output: The delegation was registered.\
-\
-Status: Pass
+Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 1 and the function will return the delegation address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148.
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+registerDelegationAddress(...) | 1 | The delegation will be registered. | The delegation was registered. | Pass
+
 
 ### Test Case ID: 2
 
-Test Case Objective: Register a delegation address on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) just for the airdrop use case and just for The Memes token #1.\
+***Test Case Objective:*** \
 \
-Prerequisite:
+Register a delegation address on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for the airdrop use case (#3) only and just for The Memes token #1.\
+\
+***Prerequisite:***
 1. Use case number exists
 2. Delegation Address is not locked
 <!-- end of the list -->
 
-Input Data:\
+***Input Data:***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
 _expiryDate = 1682080764 (21/04/2023)\
 _useCase = 3\
 _allTokens = false\
-_tokenid = 1\
-\
-Expected Output: The delegation will be registered.\
-\
-Actual Output: The delegation was registered.\
-\
-Status: Pass
+_tokenid = 1
 
+***Post-execution:***\
+\
+Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 3 and the function will return the delegation address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148.
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+registerDelegationAddress(...) | 3 | The delegation will be registered. | The delegation was registered. | Pass
 
 ### Test Case ID: 3
 
-Test Case Objective: Register a delegation address on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) with use case number 50.\
+Test Case Objective: Register a delegation address on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for use case number 50.\
 \
-Prerequisite:
+***Prerequisite:***
 1. Delegation Address is not locked
 <!-- end of the list -->
 
-Input Data:\
+***Input Data:***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
 _expiryDate = 1682080764 (21/04/2023)\
 _useCase = 50\
 _allTokens = true\
-_tokenid = 0\
-\
-Expected Output: The delegation will not be registered as the execution of the transaction will fail.\
-\
-Actual Output: The delegation was not registered.\
-\
-Status: Pass
+_tokenid = 0
 
+***Post-execution:***\
+\
+Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 50 and you will notice that the delegation was not registered.
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+registerDelegationAddress(...) | 50 | The delegation will not be registered as the execution of the transaction will fail. | The delegation was not registered. | Pass
+
+### Test Case ID: 4
+
+Test Case Objective: Register a delegation address on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for the sub-delegation rights use case #16.\
+\
+***Prerequisite:***
+1. Use case exists
+2. Delegation Address is not locked
+<!-- end of the list -->
+
+***Input Data:***\
+\
+_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+_delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
+_expiryDate = 1682080764 (21/04/2023)\
+_useCase = 16\
+_allTokens = true\
+_tokenid = 0
+
+***Post-execution:***\
+\
+Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 16 and the function will return the delegation address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148.
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+registerDelegationAddress(...) | 16 | The delegation will be registered. | The delegation was not registered. | Pass
+
+### Test Case ID: 5
+
+Test Case Objective: Register a delegation address on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for consolidation purposes use case #99.\
+\
+***Prerequisite:***
+1. Use case exists
+2. Delegation Address is not locked
+<!-- end of the list -->
+
+***Input Data:***\
+\
+_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+_delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
+_expiryDate = 1682080764 (21/04/2023)\
+_useCase = 99\
+_allTokens = true\
+_tokenid = 0
+
+***Post-execution:***\
+\
+Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 99 and the function will return the delegation address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148.
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+registerDelegationAddress(...) | 99 | The delegation will be registered. | The delegation was not registered. | Pass
+
+<div id='revokeDelegationAddress'/>
+
+## Revoke a delegation address from The Memes by 6529 collection.
+
+### Description: In this group of test cases a wallet calls the revokeDelegationAddress(...) function to revoke a delegation address. Please make sure that the  address 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 is selected as an Account on remix and that you will revoke an address that was already registered for delegation.
+
+### Test Case ID: 6
+
+***Test Case Objective:*** \
+\
+Revoke a delegation address from 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) that was already registered for the airdrop usecase #3.\
+\
+***Prerequisite:***
+1. Execute Test Case ID 2.
+2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 3 and make sure that a delegation Address was registered for that specific use case. If you have already executed Test Case ID you should be able to view as a result the delegation address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148.
+3. Usecase number exists 
+4. Delegation Address was already registered
+<!-- end of the list -->
+
+***Input Data:***\
+\
+_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+_delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
+_useCase = 3
+
+***Post-execution:***\
+\
+Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 3 and you wont be able to find the delegation address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148 as it was revoked.
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+revokeDelegationAddress(...) | 3 | The delegation will be revoked. | The delegation was revoked. | Pass
 
 
     
