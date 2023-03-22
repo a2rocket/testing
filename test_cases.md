@@ -2,7 +2,12 @@
 ## Sample Test Cases
 
 [How and where to run the test cases?](#setupEnvrionment)\
-[Register a delegation address on The Memes by 6529 collection.](#registerDelegationAddressCollection)\
+[Register a delegation address on The Memes by 6529 collection.](#)\
+[Register a delegation address using a wallet with subdelegation rights](#)\
+[Check consolidation between two addresses](#)\
+[Retrieve delegation address](#)\
+[Retrieve delegators](#)\
+[How does it work for project developers?](#)
 
 <div id='setupEnvironment'/>
 
