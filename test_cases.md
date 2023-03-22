@@ -5,7 +5,7 @@
 [Register a delegation address on The Memes by 6529 collection.](#registerDelegationAddressCollection)\
 [Revoke a delegation address on The Memes by 6529 collection.](#revokeDelegationAddress)\
 [Update a delegation address on The Memes by 6529 collection.](#updateDelegationAddress)\
-[Register a delegation address using a wallet with subdelegation rights](#)\
+[Register a delegation address using a wallet with subdelegation rights](#registerDelegationAddressUsingSubDelegation)\
 [Revoke a delegation address using a wallet with subdelegation rights](#)\
 [Check consolidation between two addresses](#)\
 [Retrieve delegation address](#)\
@@ -16,7 +16,7 @@
 
 ## Setup workscape:
 
-The easiest way to run the sample test cases is via remix.org.
+The simpliest cinfiguration to run the sample test cases is via remix.org.
 
 1. Navigate to remix.org
 2. Under File Explorer click the Create New file icon
@@ -186,7 +186,7 @@ Revoke a delegation address from 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The
 \
 ***Prerequisite:***
 1. Execute Test Case ID 2.
-2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 3 and make sure that a delegation Address was registered for that specific use case. If you have already executed Test Case ID you should be able to view as a result the delegation address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148.
+2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 3 and make sure that a delegation Address was registered for that specific use case. If you have already executed Test Case ID 2 you should be able to view as a result the delegation address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148.
 3. Usecase number exists 
 4. Delegation Address was already registered
 <!-- end of the list -->
@@ -205,5 +205,78 @@ Function | Use-Case  | Expected Output | Actual Output | Status
 ------------- | ------------- | ------------- | ------------- | -------------
 revokeDelegationAddress(...) | 3 | The delegation will be revoked. | The delegation was revoked. | Pass
 
+<div id='updateDelegationAddress'/>
 
+## Update a delegation address from The Memes by 6529 collection.
+
+### Description: In this group of test cases a wallet calls the updateDelegationAddress(...) function to update a delegation address. Please make sure that the  address 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 is selected as an Account on remix and that you will update an address that was already registered for delegation.
+
+### Test Case ID: 7
+
+***Test Case Objective:*** \
+\
+Update a delegation address from 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) that was already registered for all use cases #1.\
+\
+***Prerequisite:***
+1. Execute Test Case ID 1.
+2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 1 and make sure that a delegation Address was registered for that specific use case. If you have already executed Test Case ID 1 you should be able to view as a result the delegation address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148.
+3. Usecase number exists 
+4. Delegation Address was already registered
+<!-- end of the list -->
+
+***Input Data:***\
+\
+_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+_olddelegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
+_newdelegationAddress = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2\
+_expiryDate = 1682080764 (21/04/2023)\
+_useCase = 1\
+_allTokens = true\
+_tokenid = 0
+
+***Post-execution:***\
+\
+Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 1 and the function will return the updated delegation address 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2.
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+revokeDelegationAddress(...) | 1 | The delegation will be updated. | The delegation was updated. | Pass
+
+<div id='registerDelegationAddressUsingSubDelegation'/>
+
+## Register a delegation address for The Memes by 6529 collection using a wallet that has sub-delegation rights.
+
+### Description: In this group of test cases a wallet calls the registerDelegationAddressUsingSubDelegation(...) function to register a delegation address on behalf of a Delegator that granted him/her sub-delegation rights. Firstly, please make sure that you run Test Case ID 4 and then make sure that the address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148 is selected as an Account on remix.
+
+### Test Case ID: 8
+
+***Test Case Objective:*** \
+\
+Register a delegation address on behalf of a delegator on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for minting use case #2.\
+\
+***Prerequisite:***
+1. Execute Test Case ID 4.
+2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 16 and make sure that a delegation Address was registered for the sub-delegation usecase. If you have already executed Test Case ID 4 you should be able to view as a result the delegation address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148.
+3. Usecase number exists.
+4. Delegation Address in not locked.
+<!-- end of the list -->
+
+***Input Data:***\
+\
+_delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+_delegationAddress = 0x4B0897b0513fdC7C541B6d9D7E929C4e5364D2dB\
+_expiryDate = 1682080764 (21/04/2023)\
+_useCase = 2\
+_allTokens = true\
+_tokenid = 0
+
+***Post-execution:***\
+\
+Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 2 and the function will return the updated delegation address 0x4B0897b0513fdC7C541B6d9D7E929C4e5364D2dB.
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+registerDelegationAddressUsingSubDelegation(...) | 2 | The delegation will be registered. | The delegation was registered. | Pass
+    
     
