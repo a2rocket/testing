@@ -33,7 +33,7 @@ You are always welcome to run the smart contract code and conduct the tests usin
 
 ## Register a delegation address on The Memes by 6529 collection.
 
-Description: In this group of test cases a wallet calls the registerDelegationAddress(...) function to register or not a delegation address. Please make sure that the wallet address 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 is selected as an Account on remix and that you will use as a delegation Address an address that also exists on the Account dropdown box.\
+### Description: In this group of test cases a wallet calls the registerDelegationAddress(...) function to register or not a delegation address. Please make sure that the wallet address 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 is selected as an Account on remix and that you will use as a delegation Address an address that also exists on the Account dropdown box.\
 
 ### Test Case ID: 1
 
