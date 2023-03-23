@@ -337,7 +337,7 @@ Check the consolidation status of two addresses. Firstly, you need to register w
   _allTokens = true\
   _tokenid = 0\
 
-For clarificaitons please refer to Test Case ID 5.\
+For clarifications please refer to Test Case ID 5.
 
 2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 99 and make sure that the function returns back delegation address 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7.
 
@@ -387,7 +387,7 @@ Find which addresses gave delegation rights to a specific wallet on 0x33FD426905
   _allTokens = true\
   _tokenid = 0\
 
-For clarificaitons please refer to Test Case ID 1.\
+For clarifications please refer to Test Case ID 1.
 
 2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 4 and make sure that the function returns back delegation address 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB.
 
