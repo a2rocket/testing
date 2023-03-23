@@ -9,7 +9,7 @@
 [Revoke a delegation address using a wallet with subdelegation rights](#revokeDelegationAddressUsingSubdelegation)\
 [Check the consolidation status of two addresses on a collection](#checkConsolidationStatus)\
 [Retrieve Delegators who gave delegation rights to a delegation Address](#retrieveDelegators)\
-[How does it work for project developers? - pending](#)
+[How does it work for project developers? -  pending](#)
 
 <div id='setupEnvironment'/>
 
@@ -27,7 +27,7 @@ The simpliest cinfiguration to run the sample test cases is via remix.org.
 8. Make sure that the Envrionment is set to Remix VM (Merge) and the Contract is set to delegationManagementContract
 9. Click Deploy and then Force Send
 
-If you followed the steps correctly you will be able to view all setter and getter functions of the smart contract.\
+If you followed the steps correctly you will be able to view all setter and getter functions of the smart contract.
 
 You are always welcome to run the smart contract code and conduct the tests using other tools.
 
@@ -55,7 +55,7 @@ _delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
 _expiryDate = 1682080764 (21/04/2023)\
 _useCase = 1\
 _allTokens = true\
-_tokenid = 0\
+_tokenid = 0
 
 ***Post-execution:***\
 \
@@ -330,25 +330,23 @@ Check the consolidation status of two addresses. Firstly, you need to register w
 ***Prerequisite:***
 1. Execute the registerDelegationAddress(...) function using the wallet account 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 with the following input data: 
 
-  _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
-  _delegationAddress = 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7\
-  _expiryDate = 1682080764 (21/04/2023)\
-  _useCase = 99\
-  _allTokens = true\
-  _tokenid = 0\
-
-For clarifications please refer to Test Case ID 5.
+    _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+    _delegationAddress = 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7\
+    _expiryDate = 1682080764 (21/04/2023)\
+    _useCase = 99\
+    _allTokens = true\
+    _tokenid = 0
 
 2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 99 and make sure that the function returns back delegation address 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7.
 
 3. Execute the registerDelegationAddress(...) function using the wallet account 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7 with the following input data: 
 
-  _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
-  _delegationAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4\
-  _expiryDate = 1682080764 (21/04/2023)\
-  _useCase = 99\
-  _allTokens = true\
-  _tokenid = 0
+    _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+    _delegationAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4\
+    _expiryDate = 1682080764 (21/04/2023)\
+    _useCase = 99\
+    _allTokens = true\
+    _tokenid = 0
 
 4. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 99 and make sure that the function returns back delegation address 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4.
 
@@ -380,25 +378,23 @@ Find which addresses gave delegation rights to a specific wallet on 0x33FD426905
 ***Prerequisite:***
 1. Execute the registerDelegationAddress(...) function using the wallet account 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 with the following input data: 
 
-  _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
-  _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
-  _expiryDate = 1682080764 (21/04/2023)\
-  _useCase = 4\
-  _allTokens = true\
-  _tokenid = 0\
-
-For clarifications please refer to Test Case ID 1.
+    _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+    _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
+    _expiryDate = 1682080764 (21/04/2023)\
+    _useCase = 4\
+    _allTokens = true\
+    _tokenid = 0
 
 2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 4 and make sure that the function returns back delegation address 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB.
 
 3. Execute the registerDelegationAddress(...) function using the wallet account 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7 with the following input data: 
 
-  _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
-  _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
-  _expiryDate = 1682080764 (21/04/2023)\
-  _useCase = 99\
-  _allTokens = true\
-  _tokenid = 0
+    _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+    _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
+    _expiryDate = 1682080764 (21/04/2023)\
+    _useCase = 99\
+    _allTokens = true\
+    _tokenid = 0
 
 4. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 4 and make sure that the function returns back delegation address 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB.
 
@@ -408,7 +404,7 @@ For clarifications please refer to Test Case ID 1.
 \
 _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
-_useCase = 4\
+_useCase = 4
 
 
 Function | Use-Case  | Expected Output | Actual Output | Status
