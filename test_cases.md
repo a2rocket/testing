@@ -2,13 +2,13 @@
 ## Sample Test Cases
 
 [How and where to run the test cases?](#setupEnvironment)\
-[Register a delegation address on The Memes by 6529 collection on various use cases.](#registerDelegationAddressCollection)\
-[Revoke a delegation address on The Memes by 6529 collection.](#revokeDelegationAddress)\
-[Update a delegation address on The Memes by 6529 collection.](#updateDelegationAddress)\
+[Register a delegation address on The Memes by 6529 collection on various use cases](#registerDelegationAddressCollection)\
+[Revoke a delegation address on The Memes by 6529 collection](#revokeDelegationAddress)\
+[Update a delegation address on The Memes by 6529 collection](#updateDelegationAddress)\
 [Register a delegation address using a wallet with subdelegation rights](#registerDelegationAddressUsingSubDelegation)\
 [Revoke a delegation address using a wallet with subdelegation rights](#revokeDelegationAddressUsingSubdelegation)\
 [Check the consolidation status of two addresses on a collection](#checkConsolidationStatus)\
-[Retrieve delegators](#retrieveDelegators)\
+[Retrieve Delegators who gave delegation rights to a delegation Address](#retrieveDelegators)\
 [How does it work for project developers? - pending](#)
 
 <div id='setupEnvironment'/>
@@ -367,7 +367,7 @@ checkConsolidationStatus(...) | 99 | Consolidation status will exist | Consolida
 
 <div id='retrieveDelegators'/>
 
-## Retrieve Delagators who gave delegation rights to a delegation Address
+## Retrieve Delegators who gave delegation rights to a delegation Address
 
 ### Description: In this group of test cases a wallet can find out which wallets gave delegation rights (delegators) to a specific delegation address on a specific usecase on a collection by calling the retrieveDelegators(...) function.
 
