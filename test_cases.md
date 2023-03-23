@@ -7,7 +7,7 @@
 [Update a delegation address on The Memes by 6529 collection.](#updateDelegationAddress)\
 [Register a delegation address using a wallet with subdelegation rights](#registerDelegationAddressUsingSubDelegation)\
 [Revoke a delegation address using a wallet with subdelegation rights](#revokeDelegationAddressUsingSubdelegation)\
-[Check consolidation between two addresses - pending](#)\
+[Check consolidation between two addresses](#checkConsolidationStatus)\
 [Retrieve delegation address - pending](#)\
 [Retrieve delegators - pending](#)\
 [How does it work for project developers? - pending](#)
@@ -49,14 +49,14 @@ Register a delegation address on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The
 2. Delegation Address is not locked
 <!-- end of the list -->
 
-***Input Data:***\
+***Input Data for function registerDelegationAddress(...):***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
 _expiryDate = 1682080764 (21/04/2023)\
 _useCase = 1\
 _allTokens = true\
-_tokenid = 0
+_tokenid = 0\
 
 ***Post-execution:***\
 \
@@ -78,7 +78,7 @@ Register a delegation address on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The
 2. Delegation Address is not locked
 <!-- end of the list -->
 
-***Input Data:***\
+***Input Data for function registerDelegationAddress(...):***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
@@ -103,7 +103,7 @@ Test Case Objective: Register a delegation address on 0x33FD426905F149f8376e227d
 1. Delegation Address is not locked
 <!-- end of the list -->
 
-***Input Data:***\
+***Input Data for function registerDelegationAddress(...):***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
@@ -129,7 +129,7 @@ Test Case Objective: Register a delegation address on 0x33FD426905F149f8376e227d
 2. Delegation Address is not locked
 <!-- end of the list -->
 
-***Input Data:***\
+***Input Data for function registerDelegationAddress(...):***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
@@ -155,7 +155,7 @@ Test Case Objective: Register a delegation address on 0x33FD426905F149f8376e227d
 2. Delegation Address is not locked
 <!-- end of the list -->
 
-***Input Data:***\
+***Input Data for function registerDelegationAddress(...):***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
@@ -191,7 +191,7 @@ Revoke a delegation address from 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The
 4. Delegation Address was already registered
 <!-- end of the list -->
 
-***Input Data:***\
+***Input Data for function revokeDelegationAddress(...):***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _delegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
@@ -224,7 +224,7 @@ Update a delegation address from 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The
 4. Delegation Address was already registered
 <!-- end of the list -->
 
-***Input Data:***\
+***Input Data for function updateDelegationAddress(...):***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _olddelegationAddress = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148\
@@ -262,7 +262,7 @@ Register a delegation address on behalf of a delegator on 0x33FD426905F149f8376e
 5. Delegation Address in not locked.
 <!-- end of the list -->
 
-***Input Data:***\
+***Input Data for function registerDelegationAddressUsingSubDelegation(...):***\
 \
 _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
@@ -301,7 +301,7 @@ Revoke a delegation address on behalf of a delegator on 0x33FD426905F149f8376e22
 6. Usecase number exists.
 <!-- end of the list -->
 
-***Input Data:***\
+***Input Data for function revokeDelegationAddressUsingSubdelegation(...):***\
 \
 _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4\
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
@@ -316,4 +316,55 @@ Function | Use-Case  | Expected Output | Actual Output | Status
 ------------- | ------------- | ------------- | ------------- | -------------
 revokeDelegationAddressUsingSubdelegation(...) | 1 | The delegation will be revoked. | The delegation was revoked. | Pass
     
+<div id='checkConsolidationStatus'/>
+
+## Check the consolidation status of two addresses on a collection.
+
+### Description: In this group of test cases a wallet can check the consolidation status of two addresses registered on a specific collection by calling the checkConsolidationStatus(...) function.
+
+### Test Case ID: 10
+
+***Test Case Objective:*** \
+\
+Check the consolidation status of two addresses. Firstly, you need to register wallet 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7 using wallet 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for the consolidation use case #99. Secondly, register wallet 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 using wallet 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7 on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for the consolidation use case #99. Finally, call the checkConsolidationStatus(...) function.\
+\
+***Prerequisite:***
+1. Execute the registerDelegationAddress(...) function using the wallet account 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 with the following input data: 
+
+  _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+  _delegationAddress = 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7\
+  _expiryDate = 1682080764 (21/04/2023)\
+  _useCase = 99\
+  _allTokens = true\
+  _tokenid = 0\
+
+For clarificaitons please refer to Test Case ID 5.\
+
+2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 99 and make sure that the function returns back delegation address 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7.
+
+3. Execute the registerDelegationAddress(...) function using the wallet account 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7 with the following input data: 
+
+  _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+  _delegationAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4\
+  _expiryDate = 1682080764 (21/04/2023)\
+  _useCase = 99\
+  _allTokens = true\
+  _tokenid = 0
+
+4. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 99 and make sure that the function returns back delegation address 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4.
+
+<!-- end of the list -->
+
+***Input Data for function checkConsolidationStatus(...):***\
+\
+_wallet1 = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4\
+_wallet2 = 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7\
+_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+checkConsolidationStatus(...) | 99 | Consolidation status will exist | Consolidation status exists | Pass
     
+    
+
