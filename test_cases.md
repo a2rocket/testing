@@ -2,7 +2,7 @@
 ## Sample Test Cases
 
 [How and where to run the test cases?](#setupEnvironment)\
-[Register a delegation address on The Memes by 6529 collection.](#registerDelegationAddressCollection)\
+[Register a delegation address on The Memes by 6529 collection on various use cases.](#registerDelegationAddressCollection)\
 [Revoke a delegation address on The Memes by 6529 collection.](#revokeDelegationAddress)\
 [Update a delegation address on The Memes by 6529 collection.](#updateDelegationAddress)\
 [Register a delegation address using a wallet with subdelegation rights](#registerDelegationAddressUsingSubDelegation)\
@@ -34,7 +34,7 @@ You are always welcome to run the smart contract code and conduct the tests usin
 
 <div id='registerDelegationAddressCollection'/>
 
-## Register a delegation address on The Memes by 6529 collection.
+## Register a delegation address on The Memes by 6529 collection on various use cases.
 
 ### Description: In this group of test cases a wallet calls the registerDelegationAddress(...) function to register a delegation address. Please make sure that the  address 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 is selected as an Account on remix and that you will use as a delegation Address an address that also exists on the Account dropdown box.
 
