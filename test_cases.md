@@ -7,9 +7,8 @@
 [Update a delegation address on The Memes by 6529 collection.](#updateDelegationAddress)\
 [Register a delegation address using a wallet with subdelegation rights](#registerDelegationAddressUsingSubDelegation)\
 [Revoke a delegation address using a wallet with subdelegation rights](#revokeDelegationAddressUsingSubdelegation)\
-[Check consolidation between two addresses](#checkConsolidationStatus)\
-[Retrieve delegation address - pending](#)\
-[Retrieve delegators - pending](#)\
+[Check the consolidation status of two addresses on a collection](#checkConsolidationStatus)\
+[Retrieve delegators - pending](#retrieveDelegators)\
 [How does it work for project developers? - pending](#)
 
 <div id='setupEnvironment'/>
@@ -34,7 +33,7 @@ You are always welcome to run the smart contract code and conduct the tests usin
 
 <div id='registerDelegationAddressCollection'/>
 
-## Register a delegation address on The Memes by 6529 collection on various use cases.
+## Register a delegation address on The Memes by 6529 collection on various use cases
 
 ### Description: In this group of test cases a wallet calls the registerDelegationAddress(...) function to register a delegation address. Please make sure that the  address 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 is selected as an Account on remix and that you will use as a delegation Address an address that also exists on the Account dropdown box.
 
@@ -174,7 +173,7 @@ registerDelegationAddress(...) | 99 | The delegation will be registered. | The d
 
 <div id='revokeDelegationAddress'/>
 
-## Revoke a delegation address from The Memes by 6529 collection.
+## Revoke a delegation address from The Memes by 6529 collection
 
 ### Description: In this group of test cases a wallet calls the revokeDelegationAddress(...) function to revoke a delegation address. Please make sure that the  address 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 is selected as an Account on remix and that you will revoke an address that was already registered for delegation.
 
@@ -207,7 +206,7 @@ revokeDelegationAddress(...) | 3 | The delegation will be revoked. | The delegat
 
 <div id='updateDelegationAddress'/>
 
-## Update a delegation address from The Memes by 6529 collection.
+## Update a delegation address from The Memes by 6529 collection
 
 ### Description: In this group of test cases a wallet calls the updateDelegationAddress(...) function to update a delegation address. Please make sure that the  address 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 is selected as an Account on remix and that you will update an address that was already registered for delegation.
 
@@ -244,7 +243,7 @@ revokeDelegationAddress(...) | 1 | The delegation will be updated. | The delegat
 
 <div id='registerDelegationAddressUsingSubDelegation'/>
 
-## Register a delegation address for The Memes by 6529 collection using a wallet that has sub-delegation rights.
+## Register a delegation address for The Memes by 6529 collection using a wallet that has sub-delegation rights
 
 ### Description: In this group of test cases a wallet calls the registerDelegationAddressUsingSubDelegation(...) function to register a delegation address on behalf of a Delegator that granted him/her sub-delegation rights. Firstly, please make sure that you run Test Case ID 4 and then make sure that the address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148 is selected as an Account on remix.
 
@@ -282,7 +281,7 @@ registerDelegationAddressUsingSubDelegation(...) | 2 | The delegation will be re
 
 <div id='revokeDelegationAddressUsingSubdelegation'/>
 
-## Revoke a delegation address from The Memes by 6529 collection using a wallet that has sub-delegation rights.
+## Revoke a delegation address from The Memes by 6529 collection using a wallet that has sub-delegation rights
 
 ### Description: In this group of test cases a wallet calls the revokeDelegationAddressUsingSubdelegation(...) function to revoke a delegation address on behalf of a Delegator that granted him/her sub-delegation rights. Firstly, execute Test Case ID 1. Secondly, please make sure that you executed Test Case ID 4 and then make sure that the address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148 is selected as an Account on remix. 
 
@@ -318,7 +317,7 @@ revokeDelegationAddressUsingSubdelegation(...) | 1 | The delegation will be revo
     
 <div id='checkConsolidationStatus'/>
 
-## Check the consolidation status of two addresses on a collection.
+## Check the consolidation status of two addresses on a collection
 
 ### Description: In this group of test cases a wallet can check the consolidation status of two addresses registered on a specific collection by calling the checkConsolidationStatus(...) function.
 
@@ -365,6 +364,56 @@ _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 Function | Use-Case  | Expected Output | Actual Output | Status
 ------------- | ------------- | ------------- | ------------- | -------------
 checkConsolidationStatus(...) | 99 | Consolidation status will exist | Consolidation status exists | Pass
+
+<div id='retrieveDelegators'/>
+
+## Retrieve Delagators who gave delegation rights to a delegation Address
+
+### Description: In this group of test cases a wallet can find out which wallets gave delegation rights (delegators) to a specific delegation address on a specific usecase on a collection by calling the retrieveDelegators(...) function.
+
+### Test Case ID: 11
+
+***Test Case Objective:*** \
+\
+Find which addresses gave delegation rights to a specific wallet on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for voting/governance use case #4.\
+\
+***Prerequisite:***
+1. Execute the registerDelegationAddress(...) function using the wallet account 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 with the following input data: 
+
+  _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+  _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
+  _expiryDate = 1682080764 (21/04/2023)\
+  _useCase = 4\
+  _allTokens = true\
+  _tokenid = 0\
+
+For clarificaitons please refer to Test Case ID 1.\
+
+2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 4 and make sure that the function returns back delegation address 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB.
+
+3. Execute the registerDelegationAddress(...) function using the wallet account 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7 with the following input data: 
+
+  _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+  _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
+  _expiryDate = 1682080764 (21/04/2023)\
+  _useCase = 99\
+  _allTokens = true\
+  _tokenid = 0
+
+4. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 4 and make sure that the function returns back delegation address 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB.
+
+<!-- end of the list -->
+
+***Input Data for function retrieveDelegators(...):***\
+\
+_delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
+_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+_useCase = 4\
+
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+retrieveDelegators(...) | 4 | Function will return back 2 addresses | Function returns back 2 addresses | Pass
     
     
 
