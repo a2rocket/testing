@@ -244,7 +244,7 @@ revokeDelegationAddress(...) | 1 | The delegation will be updated. | The delegat
 
 ## Register a delegation address for The Memes by 6529 collection using a wallet that has sub-delegation rights
 
-### Description: In this group of test cases a wallet calls the registerDelegationAddressUsingSubDelegation(...) function to register a delegation address on behalf of a Delegator that granted him/her sub-delegation rights. Firstly, please make sure that you run Test Case ID 4 and then make sure that the address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148 is selected as an Account on remix.
+### Description: In this group of test cases a wallet calls the registerDelegationAddressUsingSubDelegation(...) function to register a delegation address on behalf of a Delegator that granted him/her sub-delegation rights.
 
 ### Test Case ID: 8
 
@@ -282,7 +282,7 @@ registerDelegationAddressUsingSubDelegation(...) | 2 | The delegation will be re
 
 ## Revoke a delegation address from The Memes by 6529 collection using a wallet that has sub-delegation rights
 
-### Description: In this group of test cases a wallet calls the revokeDelegationAddressUsingSubdelegation(...) function to revoke a delegation address on behalf of a Delegator that granted him/her sub-delegation rights. Firstly, execute Test Case ID 1. Secondly, please make sure that you executed Test Case ID 4 and then make sure that the address 0xdD870fA1b7C4700F2BD7f44238821C26f7392148 is selected as an Account on remix. 
+### Description: In this group of test cases a wallet calls the revokeDelegationAddressUsingSubdelegation(...) function to revoke a delegation address on behalf of a Delegator that granted him/her sub-delegation rights.
 
 ### Test Case ID: 9
 
