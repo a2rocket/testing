@@ -355,7 +355,7 @@ Check the consolidation status of two addresses. Firstly, you need to register w
 \
 _wallet1 = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4\
 _wallet2 = 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7\
-_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1
 
 
 Function | Use-Case  | Expected Output | Actual Output | Status
