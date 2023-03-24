@@ -8,7 +8,7 @@
 [Register a delegation address using a wallet with subdelegation rights](#registerDelegationAddressUsingSubDelegation)\
 [Revoke a delegation address using a wallet with subdelegation rights](#revokeDelegationAddressUsingSubdelegation)\
 [Check the consolidation status of two addresses on a collection](#checkConsolidationStatus)\
-[Retrieve Delegators who gave delegation rights to a delegation Address](#retrieveDelegators)\
+[Retrieve Delegators who gave delegation rights to a delegation Address](#retrieveDelegators)
 
 <div id='setupEnvironment'/>
 
