@@ -9,7 +9,7 @@
 [Revoke a delegation address using a wallet with subdelegation rights](#revokeDelegationAddressUsingSubdelegation)\
 [Check the consolidation status of two addresses on a collection](#checkConsolidationStatus)\
 [Retrieve Delegators who gave delegation rights to a delegation Address](#retrieveDelegators)\
-[Using locks on a wallet address](#useLocks)]
+[Using locks on a wallet address](#useLocks)
 
 <div id='setupEnvironment'/>
 
