@@ -9,6 +9,7 @@
 [Revoke a delegation address using a wallet with subdelegation rights](#revokeDelegationAddressUsingSubdelegation)\
 [Check the consolidation status of two addresses on a collection](#checkConsolidationStatus)\
 [Retrieve Delegators who gave delegation rights to a delegation Address](#retrieveDelegators)
+[Using locks on a wallet address(#useLocks)]
 
 <div id='setupEnvironment'/>
 
@@ -405,7 +406,6 @@ _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _useCase = 4
 
-
 Function | Use-Case  | Expected Output | Actual Output | Status
 ------------- | ------------- | ------------- | ------------- | -------------
 retrieveDelegators(...) | 4 | Function will return back 2 addresses | Function returns back 2 addresses | Pass
@@ -448,10 +448,54 @@ _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _data = 1680328929 (01/04/2023)\
 _useCase = 8
 
-
 Function | Use-Case  | Expected Output | Actual Output | Status
 ------------- | ------------- | ------------- | ------------- | -------------
 retrieveActiveDelegators(...) | 8 | Function will return back just the 0x03C6FcED...9D1Ff7 address. | Function returns back 0x03C6FcED...9D1Ff7 | Pass
     
-    
+<div id='useLocks'/>
+
+## Retrieve Delegators who gave delegation rights to a delegation Address
+
+### Description: In this group of test cases a wallet will make use of the setglobalLock(...), setcollectionLock(...), setcollectionUsecaseLock(...) functions to get familiar of how he/she can lock/unlock a wallet so thus it cannot accept any more delegations.
+
+### Test Case ID: 13
+
+***Test Case Objective:*** \
+\
+Use a global lock so as a wallet address does not accept any more delegations.\
+\
+***Prerequisite:***
+1. Execute the registerDelegationAddress(...) function using the wallet account 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 with the following input data: 
+
+    _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+    _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
+    _expiryDate = 1682080764 (21/04/2023)\
+    _useCase = 4\
+    _allTokens = true\
+    _tokenid = 0
+
+2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 4 and make sure that the function returns back delegation address 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB.
+
+3. Select the wallet 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB from accounts
+
+<!-- end of the list -->
+
+***Input Data for function setglobalLock(...):***\
+\
+_status = true
+
+***Post-execution:***\
+\
+Select wallet 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 from the Accounts.\
+Execute the registerDelegationAddress(...) using the same data as step 1 but uing the 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 wallet.\
+Your transaction will fail as the address is locked.
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+setglobalLock(...) | 4 | Function will global lock the address | Function locked the address | Pass
+
+***Next steps:***\
+\
+Select wallet 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB from Accounts.\
+Call the setglobalLock(...) function with _status = false so as to unlock it and move to the next Test Case.
 
