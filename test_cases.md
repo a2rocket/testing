@@ -29,7 +29,7 @@ The simpliest cinfiguration to run the sample test cases is via remix.org.
 
 If you followed the steps correctly you will be able to view all setter and getter functions of the smart contract.
 
-You are always welcome to run the smart contract code and conduct the tests using other tools.
+You are always welcome to run the smart contract code and conduct the tests using other tools or direcly through etherscan.io on the Goerli contract.
 
 <div id='registerDelegationAddressCollection'/>
 
