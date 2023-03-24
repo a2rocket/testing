@@ -1,7 +1,7 @@
 # NFT Delegation Smart Contract
 ## Sample Test Cases
 
-[How and where to run the test cases?](#setupEnvironment)\
+[How to run the test cases?](#setupEnvironment)\
 [Register a delegation address on The Memes by 6529 collection on various use cases](#registerDelegationAddressCollection)\
 [Revoke a delegation address on The Memes by 6529 collection](#revokeDelegationAddress)\
 [Update a delegation address on The Memes by 6529 collection](#updateDelegationAddress)\
