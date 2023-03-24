@@ -462,7 +462,7 @@ retrieveActiveDelegators(...) | 8 | Function will return back just the 0x03C6FcE
 
 ***Test Case Objective:*** \
 \
-Use a global lock so as a wallet address does not accept any more delegations.\
+Use a global lock so as a wallet address does not accept any more delegations on any collection.\
 \
 ***Prerequisite:***
 1. Execute the registerDelegationAddress(...) function using the wallet account 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 with the following input data: 
@@ -487,15 +487,99 @@ _status = true
 ***Post-execution:***\
 \
 Select wallet 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 from the Accounts.\
-Execute the registerDelegationAddress(...) using the same data as step 1 but uing the 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 wallet.\
-Your transaction will fail as the address is locked.
+Execute the registerDelegationAddress(...) using the same data as step 1 but using the 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 wallet from Accounts.\
+Your transaction will fail as the address is locked globally.
 
 Function | Use-Case  | Expected Output | Actual Output | Status
 ------------- | ------------- | ------------- | ------------- | -------------
-setglobalLock(...) | 4 | Function will global lock the address | Function locked the address | Pass
+setglobalLock(...) | 4 | Function will lock the address globally | Function locked the address | Pass
 
 ***Next steps:***\
 \
 Select wallet 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB from Accounts.\
-Call the setglobalLock(...) function with _status = false so as to unlock it and move to the next Test Case.
+Call the setglobalLock(...) function with _status = false so as to unlock the address and move to the next Test Case.
 
+### Test Case ID: 14
+
+***Test Case Objective:*** \
+\
+Use a collection lock so as a wallet address does not accept any more delegations on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address).
+
+***Prerequisite:***
+1. Execute the registerDelegationAddress(...) function using the wallet account 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 with the following input data: 
+
+    _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+    _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
+    _expiryDate = 1682080764 (21/04/2023)\
+    _useCase = 4\
+    _allTokens = true\
+    _tokenid = 0
+
+2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 4 and make sure that the function returns back delegation address 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB.
+
+3. Select the wallet 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB from accounts
+
+<!-- end of the list -->
+
+***Input Data for function setcollectionLock(...):***\
+\
+_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+_status = true
+
+***Post-execution:***\
+\
+Select wallet 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 from the Accounts.\
+Execute the registerDelegationAddress(...) using the same data as step 1.\
+Your transaction will fail as the address is locked on this collection.
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+setcollectionLock(...) | 4 | Function will lock the address on The Memes collection| Function locked the address on The Memes collection | Pass
+
+***Next steps:***\
+\
+Select wallet 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB from Accounts.\
+Call the setcollectionLock(...) function with _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 and _status = false so as to unlock it and move to the next Test Case.
+
+### Test Case ID: 15
+
+***Test Case Objective:*** \
+\
+Use a collection use case lock so as a wallet address does not accept any more delegations on a specific use case on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address).
+
+***Prerequisite:***
+1. Execute the registerDelegationAddress(...) function using the wallet account 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 with the following input data: 
+
+    _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+    _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
+    _expiryDate = 1682080764 (21/04/2023)\
+    _useCase = 10\
+    _allTokens = true\
+    _tokenid = 0
+
+2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 10 and make sure that the function returns back delegation address 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB.
+
+3. Select the wallet 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB from accounts
+
+<!-- end of the list -->
+
+***Input Data for function setcollectionUsecaseLock(...):***\
+\
+_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+_useCase = 10\
+_status = true
+
+***Post-execution:***\
+\
+Select wallet 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 from the Accounts.\
+Execute the registerDelegationAddress(...) using the same data as step 1.\
+Your transaction will fail as the address is locked on the specific use case on this collection.
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+setcollectionUsecaseLock(...) | 10 | Function will lock the address on use case #10 on The Memes collection| Function locked the address on use case #10 on The Memes collection | Pass
+
+***Next steps:***\
+\
+Select wallet 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB from Accounts.\
+Call the setcollectionUsecaseLock(...) function with _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 10 and _status = false so as to unlock the address.
