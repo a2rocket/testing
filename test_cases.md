@@ -9,7 +9,6 @@
 [Revoke a delegation address using a wallet with subdelegation rights](#revokeDelegationAddressUsingSubdelegation)\
 [Check the consolidation status of two addresses on a collection](#checkConsolidationStatus)\
 [Retrieve Delegators who gave delegation rights to a delegation Address](#retrieveDelegators)\
-[How does it work for project developers? -  pending](#)
 
 <div id='setupEnvironment'/>
 
@@ -263,7 +262,7 @@ Register a delegation address on behalf of a delegator on 0x33FD426905F149f8376e
 
 ***Input Data for function registerDelegationAddressUsingSubDelegation(...):***\
 \
-_delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+_delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4\
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _delegationAddress = 0x4B0897b0513fdC7C541B6d9D7E929C4e5364D2dB\
 _expiryDate = 1682080764 (21/04/2023)\
@@ -367,13 +366,13 @@ checkConsolidationStatus(...) | 99 | Consolidation status will exist | Consolida
 
 ## Retrieve Delegators who gave delegation rights to a delegation Address
 
-### Description: In this group of test cases a wallet can find out which wallets gave delegation rights (delegators) to a specific delegation address on a specific usecase on a collection by calling the retrieveDelegators(...) function.
+### Description: In this group of test cases a wallet can find out which wallets gave delegation rights (delegators) to a specific delegation address on a specific usecase on a collection by calling the retrieveDelegators(...) function. In addition, in test case 12 the retrieveActiveDelegators(...) function will be executed to find just the active delegator addresses. 
 
 ### Test Case ID: 11
 
 ***Test Case Objective:*** \
 \
-Find which addresses gave delegation rights to a specific wallet on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for voting/governance use case #4.\
+Find which addresses gave delegation rights to a specific wallet on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for the voting/governance use case #4.\
 \
 ***Prerequisite:***
 1. Execute the registerDelegationAddress(...) function using the wallet account 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 with the following input data: 
@@ -392,7 +391,7 @@ Find which addresses gave delegation rights to a specific wallet on 0x33FD426905
     _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
     _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
     _expiryDate = 1682080764 (21/04/2023)\
-    _useCase = 99\
+    _useCase = 4\
     _allTokens = true\
     _tokenid = 0
 
@@ -410,6 +409,49 @@ _useCase = 4
 Function | Use-Case  | Expected Output | Actual Output | Status
 ------------- | ------------- | ------------- | ------------- | -------------
 retrieveDelegators(...) | 4 | Function will return back 2 addresses | Function returns back 2 addresses | Pass
+    
+### Test Case ID: 12
+
+***Test Case Objective:*** \
+\
+Find the active delegation addresses that gave delegation rights to a specific wallet on 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 (The Memes by 6529 collection address) for the Virtual Events Access use case #8 by calling the retrieveActiveDelegators(...) function.\
+\
+***Prerequisite:***
+1. Execute the registerDelegationAddress(...) function using the wallet account 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 with the following input data: 
+
+    _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+    _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
+    _expiryDate = 1679983329 (28/03/2023)\
+    _useCase = 8\
+    _allTokens = true\
+    _tokenid = 0
+
+2. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 8 and make sure that the function returns back delegation address 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB.
+
+3. Execute the registerDelegationAddress(...) function using the wallet account 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7 with the following input data: 
+
+    _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+    _delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
+    _expiryDate = 1682080764 (21/04/2023)\
+    _useCase = 8\
+    _allTokens = true\
+    _tokenid = 0
+
+4. Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddress = 0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7, _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 8 and make sure that the function returns back delegation address 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB.
+
+<!-- end of the list -->
+
+***Input Data for function retrieveActiveDelegators(...):***\
+\
+_delegationAddress = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB\
+_collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
+_data = 1680328929 (01/04/2023)\
+_useCase = 8
+
+
+Function | Use-Case  | Expected Output | Actual Output | Status
+------------- | ------------- | ------------- | ------------- | -------------
+retrieveActiveDelegators(...) | 8 | Function will return back just the 0x03C6FcED...9D1Ff7 address. | Function returns back 0x03C6FcED...9D1Ff7 | Pass
     
     
 
