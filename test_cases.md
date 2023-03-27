@@ -239,7 +239,7 @@ Call the retrieveDelegationAddresses(...) function with inputdata _delegatorAddr
 
 Function | Use-Case  | Expected Output | Actual Output | Status
 ------------- | ------------- | ------------- | ------------- | -------------
-revokeDelegationAddress(...) | 1 | The delegation will be updated. | The delegation was updated. | Pass
+updateDelegationAddress(...) | 1 | The delegation will be updated. | The delegation was updated. | Pass
 
 <div id='registerDelegationAddressUsingSubDelegation'/>
 
@@ -480,7 +480,7 @@ Use a global lock so as a wallet address does not accept any more delegations on
 
 <!-- end of the list -->
 
-***Input Data for function setglobalLock(...):***\
+***Input Data for function setGlobalLock(...):***\
 \
 _status = true
 
@@ -492,12 +492,12 @@ Your transaction will fail as the address is locked globally.
 
 Function | Use-Case  | Expected Output | Actual Output | Status
 ------------- | ------------- | ------------- | ------------- | -------------
-setglobalLock(...) | 4 | Function will lock the address globally | Function locked the address | Pass
+setGlobalLock(...) | 4 | Function will lock the address globally | Function locked the address | Pass
 
 ***Next steps:***\
 \
 Select wallet 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB from Accounts.\
-Call the setglobalLock(...) function with _status = false so as to unlock the address and move to the next Test Case.
+Call the setGlobalLock(...) function with _status = false so as to unlock the address and move to the next Test Case.
 
 ### Test Case ID: 14
 
@@ -521,7 +521,7 @@ Use a collection lock so as a wallet address does not accept any more delegation
 
 <!-- end of the list -->
 
-***Input Data for function setcollectionLock(...):***\
+***Input Data for function setCollectionLock(...):***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _status = true
@@ -534,12 +534,12 @@ Your transaction will fail as the address is locked on this collection.
 
 Function | Use-Case  | Expected Output | Actual Output | Status
 ------------- | ------------- | ------------- | ------------- | -------------
-setcollectionLock(...) | 4 | Function will lock the address on The Memes collection| Function locked the address on The Memes collection | Pass
+setCollectionLock(...) | 4 | Function will lock the address on The Memes collection| Function locked the address on The Memes collection | Pass
 
 ***Next steps:***\
 \
 Select wallet 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB from Accounts.\
-Call the setcollectionLock(...) function with _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 and _status = false so as to unlock it and move to the next Test Case.
+Call the setCollectionLock(...) function with _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1 and _status = false so as to unlock it and move to the next Test Case.
 
 ### Test Case ID: 15
 
@@ -563,7 +563,7 @@ Use a collection use case lock so as a wallet address does not accept any more d
 
 <!-- end of the list -->
 
-***Input Data for function setcollectionUsecaseLock(...):***\
+***Input Data for function setCollectionUsecaseLock(...):***\
 \
 _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1\
 _useCase = 10\
@@ -577,9 +577,9 @@ Your transaction will fail as the address is locked on the specific use case on 
 
 Function | Use-Case  | Expected Output | Actual Output | Status
 ------------- | ------------- | ------------- | ------------- | -------------
-setcollectionUsecaseLock(...) | 10 | Function will lock the address on use case #10 on The Memes collection| Function locked the address on use case #10 on The Memes collection | Pass
+setCollectionUsecaseLock(...) | 10 | Function will lock the address on use case #10 on The Memes collection| Function locked the address on use case #10 on The Memes collection | Pass
 
 ***Next steps:***\
 \
 Select wallet 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB from Accounts.\
-Call the setcollectionUsecaseLock(...) function with _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 10 and _status = false so as to unlock the address.
+Call the setCollectionUsecaseLock(...) function with _collectionAddress = 0x33FD426905F149f8376e227d0C9D3340AaD17aF1, _useCase = 10 and _status = false so as to unlock the address.
