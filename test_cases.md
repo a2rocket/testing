@@ -15,7 +15,7 @@
 
 ## Setup workscape:
 
-The simpliest cinfiguration to run the sample test cases is via remix.org.
+The simpliest configuration to run the sample test cases is via remix.org.
 
 1. Navigate to remix.org
 2. Under File Explorer click the Create New file icon
